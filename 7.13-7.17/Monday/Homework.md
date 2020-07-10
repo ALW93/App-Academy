@@ -33,7 +33,7 @@ JS evaluates more complex expressions using the general math order of operations
 
 ---
 ## **The String Data Type**
-The **string** data type is a primitive data type that used to represent textual data.
+The **string** data type is a primitive data type that is used to represent textual data.
 
 * can be wrapped by either **single** or **double** quotation marks, *best to choose one and stick with it for consistency*.
 * If your string contains quotation marks inside, can layer single or double quotation marks to allow it to work.
