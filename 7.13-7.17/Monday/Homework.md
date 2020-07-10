@@ -122,7 +122,7 @@ Variables are used to store information to be referenced and manipulated in a pr
   let bootcamp = "App Academy";
   console.log(bootcamp); // "App Academy"
   ```
-* JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot being with a number).
+* JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot begin with a number).
 * If you do not declare a value for a variable, undefined is automatically set.
   ```
   let bootcamp;
