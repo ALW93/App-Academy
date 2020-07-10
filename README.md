@@ -3,6 +3,7 @@
  -- Alycia Lei
 
 ## **Week One** (7.13 to 7.17)
+### **Monday**
 * [Homework](7.13-7.17/Monday/Homework.md)
 * [Lecture](7.13-7.17/Monday/Lecture.md)
 * [Practice Solutions](7.13-7.17/Monday/Practice.md)
