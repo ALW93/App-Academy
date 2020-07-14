@@ -17,5 +17,5 @@
 
 ### **Wednesday**
 
-- [Notes](7.13-7.17/Wednesday/Objectives.md)
+- [Notes](7.13-7.17/Wednesday/Notes.md)
 - [Objectives](7.13-7.17/Wednesday/Objectives.md)
