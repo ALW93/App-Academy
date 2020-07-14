@@ -33,7 +33,7 @@ JS evaluates more complex expressions using the general math order of operations
 
 ---
 ## **The String Data Type**
-The **string** data type is a primitive data type that used to represent textual data.
+The **string** data type is a primitive data type that is used to represent textual data.
 
 * can be wrapped by either **single** or **double** quotation marks, *best to choose one and stick with it for consistency*.
 * If your string contains quotation marks inside, can layer single or double quotation marks to allow it to work.
@@ -122,7 +122,7 @@ Variables are used to store information to be referenced and manipulated in a pr
   let bootcamp = "App Academy";
   console.log(bootcamp); // "App Academy"
   ```
-* JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot being with a number).
+* JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot begin with a number).
 * If you do not declare a value for a variable, undefined is automatically set.
   ```
   let bootcamp;
