@@ -31,7 +31,7 @@
       console.log("this is neither a three nor four!");
   }
   ```
-* There can be any amount of **else if** statements, however there will only one *if* statement and one *else* statement.
+* There can be any amount of **else if** statements, however there will only be one *if* statement and one *else* statement.
 ---
 ## **Mutually Exclusive Conditions**
 
@@ -57,8 +57,8 @@ If we are working with a situation that is mutually exclusive, then we should us
         console.log("The number is " + index);
         index++;
     }
-    ```
-* The most important thing to remember when writing loops is to always be working towards your condition, if we omitted the index++ our loop would run infinitely; likely crashing w/e we were working on.
+
+* The most important thing to remember when writing loops is to always be **working towards your condition**, if we omitted the index++ our loop would run infinitely; likely crashing w/e we were working on.
 
 **Important Loop Knowledge**
 
@@ -104,7 +104,7 @@ The **Array** is a data type that is one of JS's global objects, they are used t
 
 **Using Arrays**
 * Arrays are very flexible data containers, we can input elements, replace elements, and also remove elements.
-* .length property also works on arrays.
+* .**length** property also works on arrays.
 * Arrays that consist of multiple values are store in sequential order; arrays will always start at a zero index.
 
 **Working with Arrays**
@@ -112,4 +112,4 @@ The **Array** is a data type that is one of JS's global objects, they are used t
 * indexOf() function can be used with arrays.
 * If you concatenate two arrays with the + operator it will convert your combined arrays into strings.
 * If you use the **.concat** method, it will combine two arrays into a single array.
-*
+---
