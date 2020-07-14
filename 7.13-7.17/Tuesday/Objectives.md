@@ -1,5 +1,7 @@
 # **Objectives**
 
+## **Control Flow & Arrays**
+
 - **Define a function that accepts a sentence string and two words as args. The function should return a boolean indicating if the sentence includes either word.**
 
   ```
