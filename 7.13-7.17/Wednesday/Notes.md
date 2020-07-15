@@ -34,12 +34,14 @@ We want to further our thinking of functions as expressions that can be stored i
   ```
   let myFunc = function() {
       console.log("Hello");
-  }
+  };
 
   console.log(myFunc); // => prints [Function: myFunc]
   ```
 
 - **Anonymous Function** : Term used to describe a function expression before it is assigned to any variable.
+  - Uses: If a function is used only once, or a limited amount of times, an anonymous function may be syntactically lighter than using a named function.
+- Don't forget to add semi-colon after function expression!
 
 ---
 
@@ -215,6 +217,79 @@ We can combine these two methods to accomplish cool behavior! (will be really us
 let str = "I don't know what I want to eat";
 let newStr = str.split("I").join("we");
 console.log(newStr); // 'we don't know what we want to eat'
+```
+
+---
+
+## **Array Push, Pop, Shift, Unshift**
+
+**Array Methods**
+(These methods all _mutate_ our original array.)
+
+- **Push** : adds element(s) to end of array.
+- **Pop** : removes ONE element from end of array.
+- **Shift** : removes ONE element from start of array.
+- **Unshift** : adds element(s) to the start of the array.
+  - If we console.log() any of these methods, it will print out the element that is being added/removed.
+  ```
+  let array = [1, 2, 3, 4, 5];
+  array.pop();
+  console.log(array); // [1, 2, 3, 4]
+  console.log(array.pop()); // 5
+  ```
+  - It's important to note that Push & Unshift (methods that add elements) can be used to add multiple elements at a time, Pop & Shift can only remove on element when used by themselves.
+
+---
+
+## **Pairs in Arrays & Unique Pairs**
+
+One of the handy uses of double for loops is that we can use them to find pairs of data.
+
+```
+let cats = ['Bob','Fluffy','Whiskers','Fred','Happy'];
+
+function playdate(cats) {
+for (var i = 0; i < cats.length; i++) {
+    for (var j = i + 1; j < cats.length; j++) {
+        console.log([cats[i],cats[j]]);
+    }
+  }
+}
+
+playdate(cats); // =>
+[ 'Fluffy', 'Whiskers' ]
+[ 'Fluffy', 'Happy' ]
+[ 'Whiskers', 'Happy' ]
+```
+
+- By using a double for loop we were able to go through all the cats in our array and match them up for playdates.
+- By using the handy trick of setting our starting value of (var j = i + 1) we are able to avoid duplicate playdates with the other cats and ensuring no scheduled playdates by themselves!
+
+---
+
+## **Splice vs Slice**
+
+[Click to Read More](<https://www.tothenew.com/blog/javascript-splice-vs-slice/#:~:text=The%20splice()%20method%20returns,as%20a%20new%20array%20object.&text=The%20splice()%20method%20changes,t%20change%20the%20original%20array.>)
+
+| Splice                                   |     | Slice                         |
+| ---------------------------------------- | --- | ----------------------------- |
+| Changes Original Array                   |     | Doesn't Change Original Array |
+| Takes n arguments                        |     | Only takes two arguments      |
+| Arg1: Starting index                     |     | Arg1: Starting index          |
+| Arg2 (Optional): # of Elements to Remove |     | Arg 2: Ending index           |
+| Arg... (Optional): Element(s) to insert  |     |                               |
+
+- Best way to differentiate is, **SLICE** takes a slice of the array by indicating a start and end, **SPLICE** removes elements from a starting point based on how many elements you indicate in arg2 to delete from the start (_if you only pass the first required arg into splice, it will just chop off data from the start to the end)_
+
+```
+let cats = ['Fluffy', 'Whiskers', 'Happy'];
+cats.slice(1, 3);
+console.log(cats)
+console.log(cats.slice(1, 3));
+
+let cats = ['Fluffy', 'Whiskers', 'Happy'];
+cats.splice(1, 2);
+console.log(cats);
 ```
 
 ---

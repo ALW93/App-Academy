@@ -63,6 +63,9 @@ If we are working with a situation that is mutually exclusive, then we should us
 
 > Age old principal for writing good code: DRY (Don't repeat yourself)!
 
+- **Collectively Exhaustive** : Set of events if at least one of those events must occur within a specific scenario. (Think of covering all **edge cases**)
+- **Edge Cases** : problem or situation that occurs only at an extreme (maximum or minimum) operating parameter.
+
 ---
 
 ## **Basic Loops**
