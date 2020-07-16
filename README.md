@@ -26,6 +26,7 @@
 - [Notes](7.13-7.17/Wednesday/Notes.md)
 - [Objectives](7.13-7.17/Wednesday/Objectives.md)
 - [Flashcards](7.13-7.17/Wednesday/Flashcards.md)
+- [Problems & Solutions](7.13-7.17/Wednesday/Problem-Solutions.md)
 
 ### **Thursday** (Helper Functions, For Each, Map, Reduce)
 
