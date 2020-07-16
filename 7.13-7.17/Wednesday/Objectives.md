@@ -62,7 +62,7 @@
   console.log(sumNum(nums)); // 15
   ```
 
-- **Utilize Array#forEach, #map, #filter, #reduce in a function**
+- **Utilize Array#forEach, #map, #filter, #reduce in a function** (Thursday Material)
 
   - **Array.forEach** : method that executes a provided function once for each array element.
 
@@ -86,7 +86,7 @@
     const evens = nums.filter(n => n % 2 === 0);
     console.log(evens); // [ 2, 4, 6, 8, 10 ]
     ```
-  - **reduce** : executes a **reducer** functiong (that you provide) on each element of the array, resulting in a single output value.
+  - **reduce** : executes a **reducer** function (that you provide) on each element of the array, resulting in a single output value.
     ```
     function sumArray(array) {
     return array.reduce((a,b) => (a+b));
