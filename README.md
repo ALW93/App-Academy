@@ -18,6 +18,7 @@
 
 - [Notes](7.13-7.17/Tuesday/Notes.md)
 - [Objectives](7.13-7.17/Tuesday/Objectives.md)
+- [Problems & Solutions](7.13-7.17/Tuesday/Problem-Solutions.md)
 
 ### **Wednesday** (Intermediate Functions)
 
