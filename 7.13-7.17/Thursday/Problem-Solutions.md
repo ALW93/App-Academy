@@ -4,6 +4,8 @@
 
 Write a function sumArray(arr) that accepts an array as an arg. The function should return the total sum of all values in the array. Solve this using Array#forEach.
 
+**For Each Solution**
+
 ```js
 function sumArray(arr) {
   let total = 0;
@@ -13,6 +15,8 @@ function sumArray(arr) {
   return total;
 }
 ```
+
+**Condensed For Each Solution**
 
 ```js
 function sumArray(arr) {
@@ -28,6 +32,8 @@ function sumArray(arr) {
 
 Write a function avgVal(arr) that accepts an array as an arg. The function should return the average of all values in the array. If the array is empty, it should return null. Solve this using Array#forEach.
 
+**For Each Solution**
+
 ```js
 function avgVal(arr) {
   let sum = 0;
@@ -38,6 +44,8 @@ function avgVal(arr) {
   return sum / arr.length;
 }
 ```
+
+**Condensed For Each Solution**
 
 ```js
 function avgVal(arr) {
@@ -52,6 +60,8 @@ function avgVal(arr) {
 ## **My Index Of Recall**
 
 Write a function myIndexOf(arr, target) that takes in an array and target value as args. The function should return the first index where the target is found in the array. If the target is not found, it should return -1. Solve this without using Array#indexOf.
+
+**For Loop Solution**
 
 ```js
 function myIndexOf(arr, target) {
@@ -70,6 +80,8 @@ function myIndexOf(arr, target) {
 
 Write a function tripler(nums) that takes in an array as an arg. The function should return a new array containing three times every number of the original array. Solve this using Array#map.
 
+**Map Solution**
+
 ```js
 function tripler(nums) {
   return nums.map(function (num) {
@@ -77,6 +89,8 @@ function tripler(nums) {
   });
 }
 ```
+
+**Condensed Map Solution**
 
 ```js
 function tripler(nums) {
@@ -90,15 +104,17 @@ function tripler(nums) {
 
 Write a function longWords(words) that takes in an array of words. The function should return an array containing only the words that are longer than 5 characters. Solve this using Array#filter.
 
+**Filter Solution**
+
 ```js
 function longWords(words) {
   return words.filter(function (word) {
-    if (word.length > 5) {
-      return word;
-    }
+    return word.length > 5;
   });
 }
 ```
+
+**Condensed Filter Solution**
 
 ```js
 function longWords(words) {
@@ -112,18 +128,20 @@ function longWords(words) {
 
 Write a function removeEWords(sentence) that accepts a sentence string as an arg. The function should return a new string, containing only the words that don't have the letter "e" in them. Solve this using Array#filter.
 
+**Filter Solution**
+
 ```js
 function removeEWords(sentence) {
   let arr = sentence.split(" ");
   return arr
     .filter(function (word) {
-      if (!word.includes("e")) {
-        return word;
-      }
+      return !word.includes("e");
     })
     .join(" ");
 }
 ```
+
+**Condensed Filter Solution**
 
 ```js
 function removeEWords(sentence) {
@@ -137,6 +155,8 @@ function removeEWords(sentence) {
 ## **Max Value**
 
 Write a function maxValue(nums) that takes in an array of numbers as an arg. The function should return the largest number of the array. If the array is empty, the function should return null. You must use Array#forEach in your solution.
+
+**For Each Solution**
 
 ```js
 function maxValue(nums) {
@@ -153,6 +173,8 @@ function maxValue(nums) {
 ## **Two Sum Recall**
 
 Write a function twoSum(arr, target) that accepts an array and a target number as args. The function should a return a boolean indicating if two distinct numbers of the array add up to the target value. You can assume that input array contains only unique numbers.
+
+**Double For Loop Solution**
 
 ```js
 function twoSum(arr, target) {
@@ -173,6 +195,24 @@ function twoSum(arr, target) {
 
 Write a function twoDimensionalProduct(array) that takes in a 2D array of numbers as an argument. The function should return the total product of all numbers multiplied together. Solve this using the Array#forEach method.
 
+**Chained forEach Solution**
+
+```js
+let twoDimensionalProduct = function (arr) {
+  let product = 1;
+
+  arr.forEach(function (subArr) {
+    subArr.forEach(function (num) {
+      product *= num;
+    });
+  });
+
+  return product;
+};
+```
+
+**Flat Method Single For Each Solution**
+
 ```js
 function twoDimensionalProduct(array) {
   let arr = array.flat();
@@ -184,6 +224,8 @@ function twoDimensionalProduct(array) {
 }
 ```
 
+**Condensed Flat Method Single For Each Solution**
+
 ```js
 function twoDimensionalProduct(array) {
   let arr = array.flat();
@@ -191,6 +233,28 @@ function twoDimensionalProduct(array) {
   arr.forEach((num) => (result *= num));
   return result;
 }
+```
+
+**Harry's Chained Reduce Solution**
+
+```js
+let twoDimensionalProduct = function (array) {
+  return array.reduce((product, subArray) => {
+    return (
+      product *
+      subArray.reduce((accum, num) => {
+        return accum * num;
+      })
+    );
+  }, 1);
+};
+```
+
+**Condensed Version of Above**
+
+```js
+let twoDimensionalProduct = (a) =>
+  a.reduce((p, subA) => p * subA.reduce((acc, n) => acc * n), 1);
 ```
 
 ---
@@ -201,9 +265,26 @@ Write a function popper(array, num) that takes in an array and a number as args.
 
 Define this function using function expression syntax.
 
+**Straightforward Solution**
+
 ```js
 let popper = function (array, num) {
   return array.splice(array.length - num);
+};
+```
+
+**For Loop Solution**
+
+```js
+let popper = function (array, num) {
+  let removed = [];
+
+  for (let i = 0; i < num; i++) {
+    let el = array.pop();
+    removed.push(el);
+  }
+
+  return removed;
 };
 ```
 
@@ -212,6 +293,7 @@ let popper = function (array, num) {
 ## **Choose Primes**
 
 Write a function choosePrimes(nums) that takes in an array of numbers as args. The function should return a new array containing the primes from the original array. A prime number is a number that is only divisible by 1 and itself. Hint: consider creating a helper function to check if a number is prime!
+**Helper Solution w/ Filter in Main**
 
 ```js
 function choosePrimes(nums) {
@@ -230,11 +312,41 @@ function isPrime(num) {
 }
 ```
 
+**Helper Solution w/ forEach in Main**
+
+```js
+let isPrime = function (num) {
+  if (num < 2) return false;
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+let choosePrimes = function (nums) {
+  let primes = [];
+
+  nums.forEach(function (num) {
+    if (isPrime(num)) {
+      primes.push(num);
+    }
+  });
+
+  return primes;
+};
+```
+
 ---
 
 ## **Fizz Buzz Recall**
 
 Write a function fizzBuzz(max) that accepts a number as an arg. The function should return an array containing all positive numbers less than max that are divisible by either 3 or 5, but not both.
+
+**Filter Solution**
 
 ```js
 function fizzBuzz(max) {
@@ -246,11 +358,29 @@ function fizzBuzz(max) {
 }
 ```
 
+**For Loop Solution**
+
+```js
+let fizzBuzz = function (max) {
+  let nums = [];
+
+  for (let i = 1; i < max; i++) {
+    if ((i % 3 === 0 || i % 5 === 0) && !(i % 3 === 0 && i % 5 === 0)) {
+      nums.push(i);
+    }
+  }
+
+  return nums;
+};
+```
+
 ---
 
 ## **Longest Word**
 
 Write a function longestWord(sentence) that takes in a sentence string as an argument. The function should return the longest word in the sentence. You must use Array#forEach in your solution.
+
+**For Each Solution**
 
 ```js
 function longestWord(sentence) {
@@ -271,11 +401,15 @@ function longestWord(sentence) {
 
 Write a function sumWithReduce(nums) that takes in an array of numbers. The function should return the total sum of all numbers in the array. Solve this using Array#reduce.
 
+**Condensed Reduce Solution**
+
 ```js
 function sumWithReduce(nums) {
   return nums.reduce((a, b) => a + b, 0);
 }
 ```
+
+**Reduce Solution**
 
 ```js
 function sumWithReduce(nums) {
@@ -291,6 +425,8 @@ function sumWithReduce(nums) {
 
 Write a function abbreviate(word) that takes in a string arg. The function should return a new string where all of its vowels are removed.
 
+**Condensed Filter Solution**
+
 ```js
 function abbreviate(word) {
   return word
@@ -300,6 +436,8 @@ function abbreviate(word) {
     .join("");
 }
 ```
+
+**Filter Solution**
 
 ```js
 function abbreviate(word) {
@@ -315,11 +453,31 @@ function abbreviate(word) {
 }
 ```
 
+**For Loop Solution**
+
+```js
+let abbreviate = function (word) {
+  let vowels = "aeiou";
+  let newWord = "";
+
+  for (let i = 0; i < word.length; i++) {
+    let char = word[i];
+    if (!vowels.includes(char.toLowerCase())) {
+      newWord += char;
+    }
+  }
+
+  return newWord;
+};
+```
+
 ---
 
 ## **Product With Reduce**
 
 Write a function productWithReduce(nums) that takes in an array of numbers. The function should return the total product of multiplying all numbers of the array together. You can assume that nums will not be an empty array. Solve this using Array#reduce.
+
+**Reduce Solution**
 
 ```js
 function productWithReduce(nums) {
@@ -328,6 +486,8 @@ function productWithReduce(nums) {
   });
 }
 ```
+
+**Condensed Reduce Solution**
 
 ```js
 function productWithReduce(nums) {
@@ -340,6 +500,7 @@ function productWithReduce(nums) {
 ## **Remove Last Vowel Recall**
 
 Write a function removeLastVowel(word) that takes in a string and returns the string with its last vowel removed.
+**For Loop w/ Splice Solution**
 
 ```js
 function removeLastVowel(word) {
@@ -354,11 +515,30 @@ function removeLastVowel(word) {
 }
 ```
 
+**For Loop w/ Slice Solution**
+
+```js
+let removeLastVowel = function (word) {
+  let vowels = "aeiou";
+
+  for (let i = word.length - 1; i >= 0; i--) {
+    let char = word[i];
+    if (vowels.includes(char)) {
+      return word.slice(0, i) + word.slice(i + 1);
+    }
+  }
+
+  return word;
+};
+```
+
 ---
 
 ## **Abbreviate Words**
 
 Write a function abbreviateWords(sentence) that takes in a sentence string. The function should return a new sentence where words that are longer than 4 characters have their vowels removed. Hint: Consider creating a helper function to remove all vowels in a string.
+
+**Helper Solution w/ Map**
 
 ```js
 function abbreviateWords(sentence) {
@@ -391,6 +571,8 @@ let vowelRemover = function (word) {
 
 Write a function maxWithReduce(nums) that takes in an array of numbers. The function should return the largest number of the array. You can assume that the array will not be empty. Solve this using Array#reduce.
 
+**Reduce Solution**
+
 ```js
 function maxWithReduce(nums) {
   return nums.reduce(function (accum, current) {
@@ -408,6 +590,8 @@ function maxWithReduce(nums) {
 ## **Contains Word**
 
 Write a function containsWord(sentence, targetWord) that accepts two strings as args. The function should return a boolean indicating whether the targetWord is found inside of the sentence. Solve this without using #indexOf or #includes.
+
+**For Loop Solution**
 
 ```js
 function containsWord(sentence, targetWord) {
@@ -429,6 +613,27 @@ Write a function uncompress(str) that takes in a "compressed" string as an arg. 
 
 Hint: you can use the built-in Number function should convert a numeric string into the number type. For example. Number("4") => 4
 
+**Double For Loop Solution**
+
+```js
+let uncompress = function (str) {
+  let newStr = "";
+
+  for (let i = 0; i < str.length; i += 2) {
+    let char = str[i];
+    let num = Number(str[i + 1]);
+
+    for (let times = 0; times < num; times += 1) {
+      newStr += char;
+    }
+  }
+
+  return newStr;
+};
+```
+
+**Single For Loop using Repeat Function**
+
 ```js
 function uncompress(str) {
   let newStr = "";
@@ -444,6 +649,8 @@ function uncompress(str) {
 ## **Hipsterfy**
 
 Write a function hipsterfy(sentence) that takes in a sentence string and returns the sentence where every word is missing it's last vowel.
+
+**Helper using Map**
 
 ```js
 function hipsterfy(sentence) {
@@ -468,11 +675,41 @@ let vowelRemover = function (word) {
 };
 ```
 
+**Helper using For Each**
+
+```js
+let removeLastVowel = function (word) {
+  let vowels = "aeiou";
+
+  for (let i = word.length - 1; i >= 0; i--) {
+    let char = word[i];
+    if (vowels.includes(char)) {
+      return word.slice(0, i) + word.slice(i + 1);
+    }
+  }
+
+  return word;
+};
+
+let hipsterfy = function (sentence) {
+  let newWords = [];
+  let words = sentence.split(" ");
+
+  words.forEach(function (word) {
+    newWords.push(removeLastVowel(word));
+  });
+
+  return newWords.join(" ");
+};
+```
+
 ---
 
 ## **Least Common Multiple Recall**
 
 Write a function leastCommonMultiple(num1, num2) that accepts two numbers as arguments. The functions should return the smallest number that is divisible by both num1 and num2.
+
+**For Loop Solution**
 
 ```js
 function leastCommonMultiple(num1, num2) {
@@ -484,6 +721,20 @@ function leastCommonMultiple(num1, num2) {
 }
 ```
 
+**Harry's Recursive Solution single Function**
+
+```js
+function leastCommonMultiple(num1, num2) {
+  let gcd = function (num1, num2) {
+    if (num1 === 0) return num2;
+    if (num2 === 0) return num1;
+
+    return gcd(num2, num1 % num2);
+  };
+  return (num1 * num2) / gcd(num1, num2);
+}
+```
+
 ---
 
 ## **Rotate**
@@ -491,6 +742,8 @@ function leastCommonMultiple(num1, num2) {
 Write a function rotate(array, num) that takes in an array and a number as args. When the num is positive, the elements of the array should be rotated to the right. When the num is negative, the elements of the array should be rotated to the left. The function should mutate the original array.
 
 Define this function using function expression syntax.
+
+**For Loop & Conditional Solution**
 
 ```js
 let rotate = function (array, num) {
@@ -516,6 +769,8 @@ let rotate = function (array, num) {
 Write a function additionMutator that accepts an array and a number as an arguments.
 The function should mutate the input array such that every element has the given number added to it.
 
+**For Loop Solution**
+
 ```js
 function additionMutator(array, num) {
   for (let i = 0; i < array.length; i++) {
@@ -529,6 +784,8 @@ function additionMutator(array, num) {
 ## **Alternating Words**
 
 Write a function alternatingWords that accepts an array of words as an argument. The function should mutate the input array such that the words alternate between fully uppercase or lowercase. The first word should be uppercase.
+
+**For Loop Solution**
 
 ```js
 function alternatingWords(array) {
@@ -560,6 +817,38 @@ The function should translate the sentence according to the following rules:
 
 Note that if words are capitalized in the original sentence, they should remain
 capitalized in the translated sentence. Vowels are the letters a, e, i, o, u.
+
+**Single Helper Solution**
+
+```js
+let repeatingTranslate = function (sentence) {
+  let words = sentence.split(" ");
+  let newWords = words.map(function (word) {
+    if (word.length < 3) {
+      return word;
+    } else {
+      return translateWord(word);
+    }
+  });
+  return newWords.join(" ");
+};
+
+let translateWord = function (word) {
+  let vowels = "aeiou";
+  let lastChar = word[word.length - 1];
+  if (vowels.includes(lastChar)) {
+    return word + word;
+  }
+
+  for (let i = word.length - 1; i >= 0; i--) {
+    if (vowels.includes(word[i])) {
+      return word + word.slice(i);
+    }
+  }
+};
+```
+
+**Double Helper Solution**
 
 ```js
 function repeatingTranslate(sent) {

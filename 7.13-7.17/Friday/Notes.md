@@ -1,6 +1,6 @@
 # **Notes**
 
-Th
+## **Determining Types**
 
 > Fun Fact: Operators like +, %, and = are called binary operators because they take two operands.
 > The **typeOf** operator returns the type of data you call it on.
@@ -94,6 +94,7 @@ Tools to help handle certain exceptional code situations, such as hardware fault
   - Examples would be If, for, and function blocks!
 - **Try** blocks tells JS it needs to watch for some errors in the code it's blocked off.
 - **Catch** blocks tell JS what to do in the event there _is_ an error.
+- **MAKE SURE** you fill out the catch block!
 
 ```js
 function sumArray(array) {
@@ -162,3 +163,30 @@ function sumArray(array) {
   return sum;
 }
 ```
+
+> Fun Fact: If you divide an integer with zero in JS you will output infinity or neg. infinity.
+
+```js
+let guestList = ["Leonardo", "Michaelangelo", "Donatello", "Raphael"];
+let queue = ["Bobby", "Donatello", "Raphael", "Tom"];
+
+for (let i = 0; i < queue.length; i++) {
+  let person = queue[i];
+  try {
+    if (!guestList.includes(person)) {
+      throw new Error(person + "wasn't invited");
+    } else {
+      console.log("Welcome to the party," + person);
+    }
+  } catch (e) {
+    console.log(e.message);
+  } finally {
+    console.log("this always runs");
+  }
+}
+```
+
+- User generated error in our conditional initiated by 'throw new Error(//message)'
+- In our catch block, we print out our custom error message by typing in 'e.message'.
+
+---
