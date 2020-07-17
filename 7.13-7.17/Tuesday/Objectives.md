@@ -4,9 +4,9 @@
 
 - **Define a function that accepts a sentence string and two words as args. The function should return a boolean indicating if the sentence includes either word.**
 
-  ```
+  ```js
   function eitherStringIncluded(sentence, word1, word2) {
-  return (sentence.includes(word1) || sentence.includes(word2)) ? true : false;
+    return sentence.includes(word1) || sentence.includes(word2) ? true : false;
   }
   ```
 
@@ -18,30 +18,31 @@
 
 - **Given a for loop, translate it into a while loop, and vice-versa**
 
-  ```
+  ```js
   function aCounter(word) {
-  let index = 0;
-  let count = 0;
-  while (index < word.length) {
+    let index = 0;
+    let count = 0;
+    while (index < word.length) {
       let char = word[index];
       if (char === "a" || char === "A") {
-      count += 1;
+        count += 1;
       }
       index++;
     }
-   return count;
-  };
+    return count;
+  }
 
   function aCounter(word) {
-  word = word.toLowerCase();
-  let count = 0;
-  for (var i = 0; i < word.length; i++) {
+    word = word.toLowerCase();
+    let count = 0;
+    for (var i = 0; i < word.length; i++) {
       if (word[i] === "a") {
-      count ++;
-     le}
+        count++;
+        le;
+      }
     }
-   return count;
-  };
+    return count;
+  }
   ```
 
   - Here is a quick drawing of how the delimiters are transferred in between.
@@ -49,48 +50,48 @@
 
 - **Write a function that iterates through a provided string argument**
 
-  ```
+  ```js
   function countVowels(word) {
     const VOWEL = "aeiou";
     let count = 0;
     for (var i = 0; i < word.length; i++) {
-    if (VOWEL.indexOf(word[i]) > -1) {
-     count++;
-     }
+      if (VOWEL.indexOf(word[i]) > -1) {
+        count++;
+      }
     }
-   return count;
-  };
+    return count;
+  }
   ```
 
 - **Given a description of pig latin, write a function that takes in a string argument and utilizes String#slice to translate the string into pig latin.**
-  ```
+  ```js
   function pigLatinWord(word) {
-  const VOWEL = "aeiou";
-  if (VOWEL.indexOf(word[0]) > -1) {
+    const VOWEL = "aeiou";
+    if (VOWEL.indexOf(word[0]) > -1) {
       return word + "yay";
-  } else {
+    } else {
       for (var i = 0; i < word.length; i++) {
-      if (VOWEL.indexOf(word[i]) > -1) {
-          return word.slice(i) + word.slice(0,i) + "ay";
+        if (VOWEL.indexOf(word[i]) > -1) {
+          return word.slice(i) + word.slice(0, i) + "ay";
+        }
       }
-     }
     }
-  };
+  }
   ```
 - **Write a function that takes in an array of words and a string as arguments and returns a boolean indicating whether the string is located inside of the array. The function must use Array.indexOf().**
 
-  ```
+  ```js
   function wordWithinArray(array, word) {
-  return (array.indexOf(word) > -1) ? true : false;
-  };
+    return array.indexOf(word) > -1 ? true : false;
+  }
   ```
 
 - **Define that an array literal is an ordered list of values defined by using bracket and individual values are read by indexing.**
 
   - The **Array** is a data type that is one of JS's global objects, they are used to store multiple values within a single structure (similar to creating a list).
   - Arrays are zero-indexed.
-    ```
-    let arr = ['apple', 'pear', 'orange']
+    ```js
+    let arr = ["apple", "pear", "orange"];
     // arr[0] => 'apple'
     // arr[1] => 'pear'
     // arr[2] => orange

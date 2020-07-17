@@ -31,10 +31,15 @@
 
 ### **Thursday** (Helper Functions, For Each, Map, Reduce)
 
-> | Variables Quiz Review | Control Flow Quiz Review | Comparison Operators Quiz Review |
+> | Variables Quiz Review | Control Flow Quiz Review | Comparison Operators Quiz Review | Helper Functions | For Each | Map | Filter | Reduce |
 
 - [Notes](7.13-7.17/Thursday/Notes.md)
-- [Objectives](7.13-7.17/Thursday/Objectives.md)
+- [Flashcards](7.13-7.17/Thursday/Flashcards.md)
 - [Quiz-Solutions](7.13-7.17/Thursday/Quiz-Solutions.md)
+- [Problems & Solutions](7.13-7.17/Thursday/Problem-Solutions.md)
 
 ### **Friday**
+
+> | Determing Types | Null & Undefined | Structured Event Handling (SEH) |
+
+- [Notes](7.13-7.17/Friday/Notes.md)

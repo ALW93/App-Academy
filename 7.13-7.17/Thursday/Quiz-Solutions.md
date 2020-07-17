@@ -21,14 +21,14 @@
    - Answer: =
    - Single equals (=) is the assignment operator
 
-4. ```
+4. ```js
    let num;
-   console.log(num * 2)
+   console.log(num * 2);
    ```
    **What will the code above print out?**
    - Answer: NaN
    - Any arithmetic including undefined will result in Not-a-Number (NaN)
-5. ```
+5. ```js
    let i = 4;
    i += 3;
    console.log(i);
@@ -36,7 +36,7 @@
    **What will the code above print out?**
    - Answer: 7
    - The += operator will modify a variable's value.
-6. ```
+6. ```js
    let i = 4;
    i + 3;
    console.log(i);
@@ -44,14 +44,14 @@
    **What will the code above print out?**
    - Answer: 4
    - The + operator will not modify a variable's value by itself.
-7. ```
+7. ```js
    let name;
    console.log(name);
    ```
    **What will the code above print?**
    - Answer: undefined
    - A newly declared variable will contain undefined as it's default value.
-8. ```
+8. ```js
    let x = 7;
    x++;
    x - 2;
@@ -68,13 +68,13 @@
    **What is the above groceries variable?**
    - Answer: Array
    - A list of comma separated values surrounded by square brackets [] is an array.
-2. ```
+2. ```js
    let age = 30;
 
    if (age > 30) {
-   console.log("older than 30");
+     console.log("older than 30");
    } else {
-   console.log("younger than 30");
+     console.log("younger than 30");
    }
    ```
 
@@ -97,20 +97,20 @@
    - Answer: "Katy"
    - Array indices always start at 0. So if we access the puppies array at the index of 1 we'd get "Katy"!
 
-5. ```
+5. ```js
    function potatoSpeak() {
-   console.log("I am potato!");
+     console.log("I am potato!");
    }
    function sadSpeak() {
-   console.log("I am NOT potato :(");
+     console.log("I am NOT potato :(");
    }
 
    function isThisPotato(word) {
-   if (word === "potato") {
-      potatoSpeak();
-   } else {
-      sadSpeak();
-   }
+     if (word === "potato") {
+       potatoSpeak();
+     } else {
+       sadSpeak();
+     }
    }
    ```
 

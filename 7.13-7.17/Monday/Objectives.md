@@ -13,7 +13,7 @@
 
 - **Given an arithmetic expression using +, -, \*, /, %, compute its value**
 
-  ```
+  ```js
   console.log(25 % 7); // 4
   console.log(9 + 4); // 13
   console.log(2 + 4 * 5); // 22
@@ -49,39 +49,39 @@
     | F | F | F |
 
 - **Given an expression consisting of >, >=, ===, <, <=, compute it’s value**
-  ```
-  console.log((24 > 3) && false); // false
+  ```js
+  console.log(24 > 3 && false); // false
   ```
 - **Apply De Morgan’s law to a boolean expression**
 
-  ```
-  !(A || B) === !A && !B
-  !(A && B) === !A || !B
+  ```js
+  !(A || B) === !A && !B;
+  !(A && B) === !A || !B;
   ```
 
 - **Given an expression that utilizes operator precedence, compute its value**
 
-  ```
+  ```js
   console.log((2 + 4) * 5); // 30
   ```
 
 - **Given an expression, use the grouping operator to change it’s evaluation**
 
-  ```
+  ```js
   console.log(2 + 3 * 4); // => 14
   console.log((2 + 3) * 4); // => 20
   ```
 
 - **Given expressions using == and ===, compute their values**
 
-  ```
+  ```js
   console.log(43 === "43"); // => false
   console.log(43 === "43"); // => true
   ```
 
 - **Given a code snippet using postfix ++, postfix --, +=, -=, /=, \*=, predict the value of labeled lines**
 
-  ```
+  ```js
   let x = 7;
   x++;
   x - 2;
@@ -99,7 +99,7 @@
 
 * **Create and assign a variable using let to a string, integer, and a boolean. Read its value and print to the console.**
 
-  ```
+  ```js
   let sent = "Hello I am a string.";
   let int = 2901;
   let bool = !true;
@@ -107,21 +107,21 @@
 
 * **Define a function using function declaration**
 
-  ```
-  function cat (name) {
-      if (name === "Berber") {
-          return "He's the best boy in the whole world!";
-      } else {
-          return "Where is Berber?";
-      }
+  ```js
+  function cat(name) {
+    if (name === "Berber") {
+      return "He's the best boy in the whole world!";
+    } else {
+      return "Where is Berber?";
+    }
   }
   ```
 
 * **Define a function that calculates the average of two numbers, call it, pass in arguments, and print it’s return value**
 
-  ```
-  function avgOfTwo (num1, num2) {
-      return (num1 + num2) / 2;
+  ```js
+  function avgOfTwo(num1, num2) {
+    return (num1 + num2) / 2;
   }
 
   console.log(avgOfTwo(5, 11)); // => 8

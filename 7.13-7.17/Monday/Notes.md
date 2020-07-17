@@ -60,8 +60,8 @@ JS evaluates more complex expressions using the general math order of operations
 **Modulo** : Very useful operation to check divisibility of numbers, check for even & odd, whether a number is prime, and much more! _(Discrete Math concept, circular problems can be solved with modulo)_
 
 - Whenever you have a smaller number % a larger number, the answer will just be the initial small number.
-  ```
-  console.log(7 % 10) // => 7;
+  ```js
+  console.log(7 % 10); // => 7;
   ```
 
 ---
@@ -73,7 +73,7 @@ The **string** data type is a primitive data type that used to represent textual
 - can be wrapped by either **single** or **double** quotation marks, _best to choose one and stick with it for consistency_.
 - If your string contains quotation marks inside, can layer single or double quotation marks to allow it to work.
 
-  ```
+  ```js
   "That's a great string"; (valid)
 
   'Shakespeare wrote, "To be or not to be"'; (valid)
@@ -83,23 +83,23 @@ The **string** data type is a primitive data type that used to represent textual
 
   - Alt. way to add other quotes within strings is to use template literals.
 
-  ```
+  ```js
   `This is a temp'l'ate literal ${function}` // use ${} to invoke functions within.
   ```
 
 - **.length** : property that can be appended to data to return the length.
   - empty strings have a length of zero.
 - **indices** : indexes of data that begin at 0, can call upon index by using the bracket notation [ ].
-  ```
+  ```js
   console.log("bootcamp"[0]); // => "b"
   console.log("bootcamp"[10]); // => "undefined"
   console.log("boots"[1 * 2]); // => "o"
-  console.log("boots"["boot".length-1]); // => "t"
+  console.log("boots"["boot".length - 1]); // => "t"
   ```
   - we can pass expressions through the brackets as well since JS always evaluates expressions first.
 - The index of the last character of a string is always one less than it's length.
 - **indexOf()** : method used to find the first index of a given character within a string.
-  ```
+  ```js
   console.log("bagel".indexOf("b")); // => 0
   console.log("bagel".indexOf("z")); // => -1
   ```
@@ -116,7 +116,7 @@ The **boolean** data type is the simplest data type since there are only two val
 - **Logical Operators** (B*oolean Operators*) are used to establish logic in our code.
 
   - **!** (not) : reverses a boolean value.
-    ```
+    ```js
     console.log(!true); // => false
     console.log(!!false); // => false
     ```
@@ -141,16 +141,16 @@ The **boolean** data type is the simplest data type since there are only two val
 - **Logical Order of Operations** : JS will evaluate !, then &&, then ||.
 - **De Morgan's Law** : Common mistake in boolean logic is incorrectly distributing ! across parentheses.
 
-  ```
-  !(A || B) === !A && !B
-  !(A && B) === !A || !B
+  ```js
+  !(A || B) === !A && !B;
+  !(A && B) === !A || !B;
   ```
 
   - In summary, to correctly distribute ! across parentheses we must also flip the operation within.
 
 - **Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can "short-circuit". For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.
-  ```
-  console.log(true || !false) // => stops after it sees "true ||"
+  ```js
+  console.log(true || !false); // => stops after it sees "true ||"
   ```
   ***
 
@@ -183,13 +183,13 @@ All comparison operators will result in a boolean output.
 Variables are used to store information to be referenced and manipulated in a program.
 
 - We initialize a variable by using the **let** keyword and a **=** single equals sign (assignment operator).
-  ```
+  ```js
   let bootcamp = "App Academy";
   console.log(bootcamp); // "App Academy"
   ```
 - JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot being with a number).
 - If you do not declare a value for a variable, undefined is automatically set.
-  ```
+  ```js
   let bootcamp;
   console.log(bootcamp); // undefined
   ```
@@ -198,7 +198,7 @@ Variables are used to store information to be referenced and manipulated in a pr
 
 **Assignment Shorthand**
 
-```
+```js
 let num = 0;
 num += 10; // same as num = num + 10
 num -= 2; // same as num = num - 2

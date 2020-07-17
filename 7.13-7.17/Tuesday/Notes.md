@@ -20,7 +20,7 @@
 - **Else If Statements** : conditional statements chained after **if statements** to test additional statements.
 - **Else Statement** : statement that will evaluate if prior conditions are deemed falsey.
 
-  ```
+  ```js
   if (test expression {
       // execute this;
   })
@@ -40,7 +40,7 @@
 
 * **Guard Clauses** : useful to refactor conditional logic and to reduce the number of lines in your functions.
 
-  ```
+  ```js
   (before guard clause)
   if (true) {
     return x;
@@ -74,16 +74,16 @@ If we are working with a situation that is mutually exclusive, then we should us
 
 **While Loops** : Will execute a block of code as long a specified condition is true.
 
-```
+```js
 while (condition) {
-// code block to be executed
+  // code block to be executed
 }
 
-    let index = 0;
-    while (index < 10) {
-        console.log("The number is " + index);
-        index++;
-    }
+let index = 0;
+while (index < 10) {
+  console.log("The number is " + index);
+  index++;
+}
 ```
 
 - The most important thing to remember when writing loops is to always be **working towards your condition**, if we omitted the index++ our loop would run infinitely; likely crashing w/e we were working on.
@@ -101,7 +101,7 @@ For loops can be broken down into three sections:
 - The **condition**
 - The **loopEnd expression**
 
-```
+```js
 
 for (<initital expression>;<condition>;<loopEnd expression>) {};
 
@@ -113,7 +113,7 @@ for (<initital expression>;<condition>;<loopEnd expression>) {};
 
 Here is an example of the same loop expressed as a while and for loop.
 
-```
+```js
 
 function forLoopDoubler (array) {
 for (let i = 0; i < array.length; i++>) {

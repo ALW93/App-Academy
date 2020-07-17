@@ -4,6 +4,8 @@
 
 - Array#splice has two required arguments: a target index and a number of elements to remove
 
+- If you only pass the first argument (target index), it will just cut out the rest of the array from that target index.
+
 - Array#splice can additionally accept any number of additional arguments representing values to be inserted
 
 ---
@@ -67,7 +69,7 @@
 
 **9. What does the term "mutability" mean in programming?**
 
-- "Mutability" refers to an object's ability to undergo changed. Mutable objects can be modified, while immutable objects cannot be changed after they are created.
+- "Mutability" refers to an object's ability to undergo change. Mutable objects can be modified, while immutable objects cannot be changed after they are created.
 
 ---
 

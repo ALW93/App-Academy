@@ -4,7 +4,7 @@
 
 Write a function reverseString(str) that takes in a string. The function should return a new string where the order the characters is reversed.
 
-```
+```js
 function reverseString(str) {
   let newStr = "";
   for (var i = str.length - 1; i > -1; i--) {
@@ -22,12 +22,12 @@ Write a function range(min, max) that takes in two numbers. The function should 
 
 Define this function using function expression syntax.
 
-```
+```js
 function range(min, max) {
-	let result = [];
-  	for (var i = min; i <= max; i ++) {
-      result.push(i);
-    }
+  let result = [];
+  for (var i = min; i <= max; i++) {
+    result.push(i);
+  }
   return result;
 }
 ```
@@ -40,9 +40,9 @@ Write a function logBetweenStepper(min, max, step) that takes in 3 numbers as pa
 
 Hint: this function only needs to print using console.log it does not need to return.
 
-```
+```js
 function logBetweenStepper(min, max, step) {
-  for (var i = min; i <= max; i+=step) {
+  for (var i = min; i <= max; i += step) {
     console.log(i);
   }
 }
@@ -54,7 +54,7 @@ function logBetweenStepper(min, max, step) {
 
 Write a function reverseSentence(sentence) that takes in a sentence as an arg. The function should return a new sentence where the order of the words is reversed. Note that you should reverse the order among words, not the order among characters.
 
-```
+```js
 function reverseSentence(sentence) {
   return sentence.split(" ").reverse().join(" ");
 }
@@ -66,7 +66,7 @@ function reverseSentence(sentence) {
 
 Write a function myIncludes(arr, target) that accepts an array and an target value as args. The function should return a boolean indicating whether the target is found in the array. Solve this without Array#includes or Array#indexOf.
 
-```
+```js
 function myIncludes(arr, target) {
   for (var i = 0; i < arr.length; i++) {
     if (arr[i] === target) {
@@ -83,7 +83,7 @@ function myIncludes(arr, target) {
 
 Write a function initials(name) that accepts a full name as an arg. The function should return the initials for that name.
 
-```
+```js
 function initials(name) {
   let arr = name.split(" ");
   let initials = [];
@@ -100,9 +100,9 @@ function initials(name) {
 
 Write a function sumArray(array) that takes in an array of numbers and returns the total sum of all the numbers.
 
-```
+```js
 function sumArray(array) {
-  return array.reduce((a,b)=>(a+b));
+  return array.reduce((a, b) => a + b);
 }
 ```
 
@@ -114,7 +114,7 @@ Write a function factorsOf(num) that takes in a number as an arg. The method sho
 
 Define this function using function expression syntax.
 
-```
+```js
 function factorsOf(num) {
   let result = [];
   if (num === 0) return []; //edge case
@@ -133,10 +133,10 @@ function factorsOf(num) {
 
 Write a function myIndexOf(arr, target) that takes in an array and target value as args. The function should return the first index where the target is found in the array. If the target is not found, it should return -1. Solve this without using Array#indexOf.
 
-```
-function myIndexOf(arr, target){
+```js
+function myIndexOf(arr, target) {
   for (var i = 0; i < arr.length; i++) {
-    if(arr[i] === target) {
+    if (arr[i] === target) {
       return i;
     }
   }
@@ -151,7 +151,7 @@ function myIndexOf(arr, target){
 Write a function, countVowels(word), that takes in a string word and returns the number of vowels in the word.
 Vowels are the letters "a", "e", "i", "o", "u".
 
-```
+```js
 function countVowels(word) {
   const VOWEL = "aeiou";
   let count = 0;
@@ -161,7 +161,7 @@ function countVowels(word) {
     }
   }
   return count;
-};
+}
 ```
 
 ---
@@ -170,8 +170,8 @@ function countVowels(word) {
 
 Write a function hasVowel(str) that takes in a string. The function should return a boolean, true if the string contains at least one vowel, false otherwise. Vowels are the letters a, e, i, o, u.
 
-```
-function hasVowel(str){
+```js
+function hasVowel(str) {
   const VOWEL = "aeiou";
   for (var i = 0; i < str.length; i++) {
     if (VOWEL.indexOf(str[i]) > -1) {
@@ -190,8 +190,8 @@ Write a function oddNumbers(min, max) that takes in two numbers as args. The fun
 
 Define this function using function expression syntax.
 
-```
-let oddNumbers = function(min, max) {
+```js
+let oddNumbers = function (min, max) {
   let result = [];
   for (var i = min + 1; i < max; i++) {
     if (Math.abs(i % 2) === 1) {
@@ -208,11 +208,11 @@ let oddNumbers = function(min, max) {
 
 Write a function fizzBuzz(max) that accepts a number as an arg. The function should return an array containing all positive numbers less than max that are divisible by either 3 or 5, but not both.
 
-```
+```js
 function fizzBuzz(max) {
   let result = [];
   for (var i = 1; i < max; i++) {
-    if((i % 3 === 0 || i % 5 === 0) && !(i % 3 === 0 && i % 5 === 0)) {
+    if ((i % 3 === 0 || i % 5 === 0) && !(i % 3 === 0 && i % 5 === 0)) {
       result.push(i);
     }
   }
@@ -226,7 +226,7 @@ function fizzBuzz(max) {
 
 Write a function firstVowel(str) that takes in a string and returns the first vowel that appears sequentially in the string.
 
-```
+```js
 function firstVowel(str) {
   const VOWEL = "aeiou";
   str = str.toLowerCase(); // for edge cases
@@ -247,10 +247,10 @@ Write a function evenNumbers(max) that takes in a number as an arg. The function
 
 Define this function using function expression syntax.
 
-```
-let evenNumbers = function(max) {
+```js
+let evenNumbers = function (max) {
   let result = [];
-  for (var i = 2; i < max; i+=2) {
+  for (var i = 2; i < max; i += 2) {
     result.push(i);
   }
   return result;
@@ -263,7 +263,7 @@ let evenNumbers = function(max) {
 
 Define a function isPrime(number) that returns true if number is prime. Otherwise, false. A number is prime if it is only divisible by 1 and itself.
 
-```
+```js
 function isPrime(number) {
   for (var i = 2; i < number; i++) {
     if (number % i === 0) {
@@ -282,13 +282,13 @@ Write a function lastVowel(str) that takes in a string and returns the last vowe
 
 Hint: You may find the String#toLowerCase or String#toUpperCase methods useful
 
-```
+```js
 function lastVowel(str) {
   let newStr = str.toLowerCase();
   const VOWEL = "aeiou";
   for (var i = str.length - 1; i > -1; i--) {
     if (VOWEL.indexOf(newStr[i]) > -1) {
-        return str[i];
+      return str[i];
     }
   }
   return null;
@@ -301,10 +301,10 @@ function lastVowel(str) {
 
 Write a function pitPat(max) that accepts a number as an arg. The function should return an array containing all positive numbers less than or equal to max that are divisible by either 4 or 6, but not both.
 
-```
+```js
 function pitPat(max) {
   let result = [];
-  for (var i = 1; i <= max; i ++) {
+  for (var i = 1; i <= max; i++) {
     if ((i % 4 === 0 || i % 6 === 0) && !(i % 4 === 0 && i % 6 === 0)) {
       result.push(i);
     }
@@ -319,14 +319,14 @@ function pitPat(max) {
 
 Write a function removeLastVowel(word) that takes in a string and returns the string with its last vowel removed.
 
-```
+```js
 function removeLastVowel(word) {
-  const VOWEL = 'aeiou';
+  const VOWEL = "aeiou";
   let wordArr = word.split("");
   for (var i = wordArr.length - 1; i > -1; i--) {
     if (VOWEL.indexOf(wordArr[i]) > -1) {
-        wordArr.splice(i,1);
-      	return wordArr.join("");
+      wordArr.splice(i, 1);
+      return wordArr.join("");
     }
   }
   return word;
@@ -339,12 +339,12 @@ function removeLastVowel(word) {
 
 Write a function pairsMaker(arr) that takes in a an array as an argument. The function should return a 2D array where the subarrays represent unique pairs of element from the input array.
 
-```
+```js
 function pairsMaker(arr) {
   let result = [];
   for (var i = 0; i < arr.length; i++) {
     for (var j = i + 1; j < arr.length; j++) {
-      result.push([arr[i],arr[j]]);
+      result.push([arr[i], arr[j]]);
     }
   }
   return result;
@@ -357,7 +357,7 @@ function pairsMaker(arr) {
 
 Write a function minValue(nums) that takes in an array of numbers as an arg. The function should return the smallest number of the array. If the array is empty, the function should return null.
 
-```
+```js
 function minValue(nums) {
   if (nums.length === 0) return null;
   return Math.min(...nums);
@@ -372,7 +372,7 @@ function minValue(nums) {
 
 Write a function twoSum(arr, target) that accepts an array and a target number as args. The function should a return a boolean indicating if two distinct numbers of the array add up to the target value. You can assume that input array contains only unique numbers.
 
-```
+```js
 function twoSum(arr, target) {
   for (var i = 0; i < arr.length; i++) {
     for (var j = i + 1; j < arr.length; j++) {
@@ -395,7 +395,7 @@ Define this function using function expression syntax.
 
 HINT: you can use Array#slice to create a copy of an array
 
-```
+```js
 function rotateRight(array, num) {
   let result = array.slice(0);
   for (var i = 0; i < num; i++) {
@@ -412,11 +412,11 @@ function rotateRight(array, num) {
 
 Write a function twoDimensionalSum(arr) that takes in a 2D array of numbers and returns the total sum of all numbers.
 
-```
+```js
 function twoDimensionalSum(arr) {
   let sum = 0;
   for (var i = 0; i < arr.length; i++) {
-    let subArr = arr[i]
+    let subArr = arr[i];
     for (var j = 0; j < subArr.length; j++) {
       sum += subArr[j];
     }
@@ -433,7 +433,7 @@ Write a function rotateLeft(array, num) that takes in an array and a number as a
 
 Define this function using function expression syntax.
 
-```
+```js
 function rotateLeft(array, num) {
   for (var i = 0; i < num; i++) {
     let ele = array.shift();
@@ -452,13 +452,13 @@ Write a function pigLatinWord that takes in a word string and translates the wor
 
 Hint: Remember the String#includes method!
 
-```
+```js
 function pigLatinWord(word) {
-  const VOWEL = 'aeiou';
-  if (VOWEL.indexOf(word[0]) > - 1) return word + "yay";
+  const VOWEL = "aeiou";
+  if (VOWEL.indexOf(word[0]) > -1) return word + "yay";
   for (var i = 0; i < word.length; i++) {
     if (VOWEL.indexOf(word[i]) > -1) {
-      return word.slice(i) + word.slice(0,i) + "ay";
+      return word.slice(i) + word.slice(0, i) + "ay";
     }
   }
 }
@@ -470,23 +470,23 @@ function pigLatinWord(word) {
 
 Write a function leastCommonMultiple(num1, num2) that accepts two numbers as arguments. The functions should return the smallest number that is divisible by both num1 and num2.
 
-Normal Solution
+**Normal Solution**
 
-```
+```js
 function leastCommonMultiple(num1, num2) {
   let upperBound = num1 * num2;
-  let lowerBound = Math.max(num1,num2);
+  let lowerBound = Math.max(num1, num2);
   for (var i = lowerBound; i <= upperBound; i++) {
     if (i % num1 === 0 && i % num2 === 0) {
       return i;
     }
   }
-};
+}
 ```
 
-GCD Recursive Solution
+**GCD Recursive Solution**
 
-```
+```js
 function lcm(num1, num2) {
   return (num1 * num2) / gcd(num1, num2);
 }
