@@ -34,12 +34,12 @@ let rotateRight = function (array, num) {
 We need to create a for loop to tell our function how many times we want to rotate.
 
 ```js
-function rotateRight(array, num) {
+let rotateRight = function (array, num) {
   let result = array.slice(0);
   for (var i = 0; i < num; i++) {
     // some code here
   }
-}
+};
 ```
 
 - By setting our second delimiter to i < num we will ask our loops to run num times.
@@ -49,13 +49,13 @@ function rotateRight(array, num) {
 We need to put some executable code within our for loop to be run during every cycle.
 
 ```js
-function rotateRight(array, num) {
+let rotateRight = function (array, num) {
   let result = array.slice(0);
   for (var i = 0; i < num; i++) {
     let ele = result.pop();
     result.unshift(ele);
   }
-}
+};
 ```
 
 - Since we are rotating to the right, every change to our result array under the hood will look like this (if we ref. our first test case):
@@ -74,14 +74,14 @@ function rotateRight(array, num) {
 Now that our for loop has ended and our copied array looks just like how the answer looks, we need to output the answer.
 
 ```js
-function rotateRight(array, num) {
+let rotateRight = function (array, num) {
   let result = array.slice(0);
   for (var i = 0; i < num; i++) {
     let ele = result.pop();
     result.unshift(ele);
   }
   return result;
-}
+};
 ```
 
 - We accomplish this by creating a `return` line AFTER the for loop.
@@ -89,14 +89,14 @@ function rotateRight(array, num) {
 ## **End Result**
 
 ```js
-function rotateRight(array, num) {
+let rotateRight = function (array, num) {
   let result = array.slice(0);
   for (var i = 0; i < num; i++) {
     let ele = result.pop();
     result.unshift(ele);
   }
   return result;
-}
+};
 ```
 
 ```js
