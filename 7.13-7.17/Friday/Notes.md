@@ -173,7 +173,11 @@ let queue = ["Bobby", "Donatello", "Raphael", "Tom"];
 for (let i = 0; i < queue.length; i++) {
   let person = queue[i];
   try {
-   alone an
+    if (!guestList.includes(person)) {
+      throw new Error(person + "wasn't invited");
+    } else {
+      console.log("Welcome to the party," + person);
+    }
   } catch (e) {
     console.log(e.message);
   } finally {

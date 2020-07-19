@@ -40,6 +40,12 @@
 
 ### **Friday**
 
-> | Determing Types | Null & Undefined | Structured Event Handling (SEH) |
+> | Determing Types | Null & Undefined | Structured Event Handling (SEH) | Intermediate Functions Quiz Review |
 
 - [Notes](7.13-7.17/Friday/Notes.md)
+- [Quiz-Solutions](7.13-7.17/Friday/Quiz-Solutions.md)
+- [Problems & Solutions](7.13-7.17/Friday/Quiz-Solutions.md)
+
+### **Misc Links\***
+
+- [Rotate Problem Guide](7.13-7.17/Misc/Rotate-Guide.md)
