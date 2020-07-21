@@ -38,14 +38,33 @@
 - [Quiz-Solutions](7.13-7.17/Thursday/Quiz-Solutions.md)
 - [Problems & Solutions](7.13-7.17/Thursday/Problem-Solutions.md)
 
-### **Friday**
+### **Friday** (SEH Handling & Advanced Problems)
 
 > | Determing Types | Null & Undefined | Structured Event Handling (SEH) | Intermediate Functions Quiz Review |
 
 - [Notes](7.13-7.17/Friday/Notes.md)
 - [Quiz-Solutions](7.13-7.17/Friday/Quiz-Solutions.md)
-- [Problems & Solutions](7.13-7.17/Friday/Quiz-Solutions.md)
+- [Problems & Solutions](7.13-7.17/Friday/Friday-Problems.md)
 
-### **Misc Links\***
+### **Misc Links**
 
 - [Rotate Problem Guide](7.13-7.17/Misc/Rotate-Guide.md)
+
+## **Week Two** (7.20 to 7.24)
+
+### **Monday** (Running JS Locally)
+
+> | Basic Terminal Navigation | Navigating VSCode | Running NodeJS |
+
+- [Notes](7.20-7.24/Monday/Notes.md)
+- [Objectives](7.20-7.24/Monday/Objectives.md)
+- [Problems & Solutions]
+
+### **Tuesday** (POJO and Pair Programming)
+
+> | Object Type | Iterating through Objects | Reference v Primitive | Rest & Spread | Destructuring | Benefits of Pair Programming | Pair Programming a/A Way | Empathetic Communication |
+
+- [Notes](7.20-7.24/Tuesday/Notes.md)
+- [Objectives](7.20-7.24/Tuesday/Objectives.md)
+
+### **Wednesday**
