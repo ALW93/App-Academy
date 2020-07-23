@@ -67,4 +67,11 @@
 - [Notes](7.20-7.24/Tuesday/Notes.md)
 - [Objectives](7.20-7.24/Tuesday/Objectives.md)
 
-### **Wednesday**
+### **Wednesday** (Callbacks)
+
+>
+
+- [Notes](7.20-7.24/Wednesday/Notes.md)
+- [Objectives](7.20-7.24/Wednesday/Objectives.md)
+
+### **Thursday** (Scope)

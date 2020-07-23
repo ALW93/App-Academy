@@ -13,6 +13,7 @@ In other programming languages, objects are referred to as, "dictionaries", "map
 - Objects are indexed with **`keys`** instead of numbers.
 - Order is not guaranteed within an Object.
 - Objects are defined by using curly braces **`{}`**
+- You can think of Objects as tables.
 
 > Fun Fact: Objects are affectionately known as POJO's (Plain Old Javascript Objects)
 
@@ -114,6 +115,9 @@ undefined
 | Cannot use Variables                                 |                                                            |
 | Keys cannot contain numbers as their first character |                                                            |
 
+- **When accessing object keys**: Bracket notation needs to refer to that key in quotations, dot notation doesn't.
+- **When accessing object keys via a variable**: Bracket notation can refer to that key w/o use of quotations, dot notation can't do this at all.
+
 ```js
 let myDog = {};
 myDog.name = "Fido";
@@ -182,7 +186,7 @@ for (let variable in object) {
 }
 ```
 
-- We use a special syntac to iterate through each key of an object called a for-in loop.
+- We use a special syntax to iterate through each key of an object called a **`for-in loop`**.
 
 **Methods vs Functions**
 
@@ -483,3 +487,45 @@ console.log(toyFinder(bigCat)); // => ["ribbon", "mouse", "string"]
 ---
 
 ## **Benefits of Pair Programming**
+
+**Benefits of Pair Programming**
+
+- Prevents focusing so much on a problem that you forget to communicate with your teammates.
+
+- Helps us share knowledge faster.
+
+> Variations of Pair Programming include Mob Programming (3+), and Extreme Programming (Entire Team Rotates through Projects), all of these are known as _Collaborative Programming_.
+
+**Common Concepts**
+
+- One Shared Device for Coding.
+- Everyone has a job.
+- Everyone gets a turn.
+- No one is "too good to pair" - it's a team process!
+
+**Pair Programming Roles**
+
+- **`The Driver`** : In charge of typing and asking questions, can let go or larger picture. Driver also suggests ways to improve/re-factor the code.
+- **`The Navigator`** : In charge of what's being typed and maintaining project momentum. They should lead the discussion and also double check the code for errors as it is being typed.
+
+**Shared Responsibilities**
+
+- Both need to discuss the plan, and often.
+- As Navigator leads, the Driver should constantly second-guess.
+- It is okay for the driver to bring up a problem!
+
+**Why Pair Up?**
+
+- Statistics have shown that pair programming slow down programming time by 15% _however_ it also reflected that the number of errors are also reduced by 15%.
+
+---
+
+## **App Academy Pair Programming Approach**
+
+**A 5-Step Process**
+
+- **`Partner Up`** : Get your pal.
+- **`Check-In`** : Get to know eachother, discuss time constraints, goals, etc.
+- **`Start Coding`** : Drivers code, Navigators Guide.
+- **`Hand Off`** : App Academy employs a 15 min. interval.
+- **`Follow-Up`** : The last check in, this is a good time wrap up and review your code. This step helps commit your progress to memory.
