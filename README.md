@@ -58,7 +58,7 @@
 
 - [Notes](7.20-7.24/Monday/Notes.md)
 - [Objectives](7.20-7.24/Monday/Objectives.md)
-- [Problems & Solutions]
+- [Problems & Solutions](7.20-7.24/Monday/Problem-Set.md)
 
 ### **Tuesday** (POJO and Pair Programming)
 
