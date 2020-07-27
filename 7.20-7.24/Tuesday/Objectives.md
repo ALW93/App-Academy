@@ -4,7 +4,19 @@
 
 - **Label variables as either `Primitive` vs. `Reference`**
 
+  - **Primitive** : Boolean, Null, Undefined, Number, String.
+  - **Reference** : Object (Arrays are a type of object)
+  - Remember that **primitive** types are immutable!
+
 - **Identify when to use `.` vs `[]` when accessing values of an object**
+
+  - **When accessing object keys**: Bracket notation needs to refer to that key in quotations, dot notation doesn't.
+
+  - **When accessing object keys via a variable**: Bracket notation can refer to that key w/o use of quotations, dot notation can't do this at all.
+
+  - Choose the square bracket when the property name is determined at runtime, or if the property name is not a valid identifier.
+
+  - Choose the dot property acccesor when the property name is known ahead of time.
 
 - **Use the `obj[key] !== undefined` pattern to check if a given variable that contains a key exists in an object**
 

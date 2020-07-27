@@ -75,3 +75,6 @@
 - [Objectives](7.20-7.24/Wednesday/Objectives.md)
 
 ### **Thursday** (Scope)
+
+- [Notes](7.20-7.24/Thursday/Notes.md)
+- [Objectives](7.20-7.24/Thursday/Objectives.md)

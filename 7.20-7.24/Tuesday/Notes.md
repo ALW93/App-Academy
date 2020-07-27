@@ -529,3 +529,5 @@ console.log(toyFinder(bigCat)); // => ["ribbon", "mouse", "string"]
 - **`Start Coding`** : Drivers code, Navigators Guide.
 - **`Hand Off`** : App Academy employs a 15 min. interval.
 - **`Follow-Up`** : The last check in, this is a good time wrap up and review your code. This step helps commit your progress to memory.
+
+---
