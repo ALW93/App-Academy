@@ -112,7 +112,7 @@ undefined
 | ---------------------------------------------------- | ---------------------------------------------------------- |
 | Easier To Read                                       | You can use variables as keys!                             |
 | Easier To Write b/c do not need Quotations.          | Okay to use variables and Strings that start with numbers. |
-| Cannot use Variables                                 |                                                            |
+| Cannot access with Variables                         |                                                            |
 | Keys cannot contain numbers as their first character |                                                            |
 
 - **When accessing object keys**: Bracket notation needs to refer to that key in quotations, dot notation doesn't.
