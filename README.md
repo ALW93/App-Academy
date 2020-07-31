@@ -7,9 +7,19 @@
 > | Introduction | Timeouts and Intervals | Threading | Call Stack | Message Queue & Event Loop | User Input with Readline |
 
 - [Notes](7.27-7.31/Monday/Notes.md)
-- [Objectives (WIP)](7.27-7.31/Monday/Objectives.md)
+- [Objectives](7.27-7.31/Monday/Objectives.md)
 
 ### **Tuesday** (Node.js & Git)
+
+- [Practice Reading](7.27-7.31/Tuesday/Scrum-Sprint-UserStories.md)
+
+### **Wednesday**
+
+- [Notes](7.27-7.31/Wednesday/Notes.md)
+
+### **Thursday**
+
+### **Friday**
 
 ## **Previous Weeks**
 

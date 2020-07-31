@@ -12,6 +12,7 @@
 - **`Asynchronous`** : No guarantee in the total order that commands are executed.
   - Some examples of async methods:
   - **`setTimeout()`** : a method used to execute a callback after a given amount of time.
+    - setTimeout's time delay is not an absolute guarantee, simply a **minimum**.
     ```js
     setTimeout(function () {
       console.log("time is up!");
@@ -91,6 +92,7 @@ clearTimeout(val);
 - If we run this, we get a special Timeout object - which is essentially useless except for being used as an argument to cancel an unexpired timeout.
 
 - **clearTimeout()** : function used to cancel a setTimeout.
+  - You can use clearTimeout in a conditional.
 
 **Running Intervals**
 
@@ -109,6 +111,8 @@ setInterval(foo, 1000, "pancakes", "couscous");
 ---
 
 ## **Threading**
+
+![pic of thread](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-JavaScript/asynchronous-functions/assets/threading.png)
 
 - **`Runtime`** : term used to describe the 'lifetime' of a program.
 
