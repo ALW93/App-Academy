@@ -19,7 +19,9 @@
 
 ### **Thursday**
 
-### **Friday**
+### **Friday** (JS Trivia)
+
+- [Flashcards](7.27-7.31/Friday/Flashcards.md)
 
 ## **Previous Weeks**
 
