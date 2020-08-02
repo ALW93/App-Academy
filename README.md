@@ -15,7 +15,7 @@
 > | Node vs Browser | File I/O | Everything About Git |
 
 - [Notes](7.27-7.31/Tuesday/Notes.md)
-- [Practice Reading](7.27-7.31/Tuesday/Scrum-Sprint-UserStories.md)
+- [In Class: Scrum, Sprint, User Stores](7.27-7.31/Tuesday/Scrum-Sprint-UserStories.md) (Unfinished)
 
 ### **Wednesday**
 
@@ -31,6 +31,9 @@
 
 ### **Friday** (JS Trivia)
 
+> | IIFE's | Interpolation | Object Key & Symbols | Primitive Data Types | Unsigned Variables |
+
+- [Notes](7.27-7.31/Friday/Notes.md)
 - [Flashcards](7.27-7.31/Friday/Flashcards.md)
 
 ## **Previous Weeks**
