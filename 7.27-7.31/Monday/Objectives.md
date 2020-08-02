@@ -42,8 +42,23 @@ setTimeout(foo, 2000, "pancakes", "couscous");
 
 **Use setInterval to have a function execute 10 times with a 1 second period. After the 10th cycle, clear the interval.**
 
-setInterval(function() {
-    
-})
+```js
+setInterval(function () {
+  console.log("hello");
+}, 5000);
+```
 
 **Write a program that accepts user input using Node’s readline module**
+
+```js
+const askGuess = () => {
+  rl.question(
+    "Berber asks: Can you guess how many snacks I want to eat right now? ",
+    (answer) => {
+      !checkGuess(Number(answer)) ? askGuess() : rl.close();
+    }
+  );
+};
+```
+
+---

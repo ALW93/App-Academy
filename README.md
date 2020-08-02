@@ -8,9 +8,13 @@
 
 - [Notes](7.27-7.31/Monday/Notes.md)
 - [Objectives](7.27-7.31/Monday/Objectives.md)
+- [Flashcards](7.27-7.31/Monday/Flashcards.md)
 
 ### **Tuesday** (Node.js & Git)
 
+> | Node vs Browser | File I/O | Everything About Git |
+
+- [Notes](7.27-7.31/Tuesday/Notes.md)
 - [Practice Reading](7.27-7.31/Tuesday/Scrum-Sprint-UserStories.md)
 
 ### **Wednesday**

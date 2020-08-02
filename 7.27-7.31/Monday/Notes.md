@@ -46,7 +46,7 @@
 
 - **Some practical scenarios**:
   - Requesting data from an external server, we do not know when we will get a response back.
-  - If we expect a user to interact with our programs we do not know when they will press certainbuttons, scroll, etc.
+  - If we expect a user to interact with our programs we do not know when they will press certain buttons, scroll, etc.
 
 ---
 
@@ -91,7 +91,7 @@ clearTimeout(val);
 
 - If we run this, we get a special Timeout object - which is essentially useless except for being used as an argument to cancel an unexpired timeout.
 
-- **clearTimeout()** : function used to cancel a setTimeout.
+- **`clearTimeout()`** : function used to cancel a setTimeout.
   - You can use clearTimeout in a conditional.
 
 **Running Intervals**
@@ -153,7 +153,7 @@ setInterval(foo, 1000, "pancakes", "couscous");
 
 **The Practical Consequences of the Call Stack**
 
-- A program will typically exit once it's call stack is empty, the cases in which it doest not is when it is **`Asynchronously Listening`**.
+- A program will typically exit once it's call stack is empty, the cases in which it does not is when it is **`Asynchronously Listening`**.
 
 - **`An event can only be handled once the call stack is empty.`**
 
@@ -166,7 +166,7 @@ _Javascript is the tool that enables web pages to be interactive and dynamic._
 **The Event Loop**
 
 - JS uses an **event loop** model of execution.
-  - Components include the call stack and a message queue.
+  - Components include the call stack and a message queue (data structures).
 - **`Message Queue`** : Keeps track of tasks that cannot be executed at the moment.
 
 **The Message Queue**
