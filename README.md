@@ -17,6 +17,7 @@
 - [Notes](7.27-7.31/Tuesday/Notes.md)
 - [In Class: Scrum, Sprint, User Stores](7.27-7.31/Tuesday/Scrum-Sprint-UserStories.md) (Unfinished)
 - [Objectives](7.27-7.31/Tuesday/Objectives.md)
+- [Flashcards](7.27-7.31/Tuesday/Flashcards.md)
 
 ### **Wednesday**
 
