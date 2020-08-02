@@ -19,9 +19,15 @@
 
 ### **Wednesday**
 
+> | Command Line Interface | Navigating File System | Common CLI Commands | Understanding Shell | Bash Permissions & Scripting |
+
 - [Notes](7.27-7.31/Wednesday/Notes.md)
 
-### **Thursday**
+### **Thursday** (Recursion)
+
+> | Recursion Basics | Recursion or Iteration? |
+
+- [Notes](7.27-7.31/Thursday/Notes.md)
 
 ### **Friday** (JS Trivia)
 

@@ -169,3 +169,5 @@ Change Visual Studio Code to use zsh as it's shell.
     - An interpreter directive
     - A commented description
     - A script body
+
+---
