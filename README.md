@@ -1,48 +1,39 @@
 # **Directory**
 
-## **Current Week** (7.27 to 7.31)
+## **Current Week** (8.3 - 8.7)
 
-### **Monday** (Asynchronous Javascript)
+### **Monday** (Browser Basics)
 
-> | Introduction | Timeouts and Intervals | Threading | Call Stack | Message Queue & Event Loop | User Input with Readline |
+> | Browser & BOM | Request/Response Cycle | Window Object | Browser Cookies |
 
-- [Notes](7.27-7.31/Monday/Notes.md)
-- [Objectives](7.27-7.31/Monday/Objectives.md)
-- [Flashcards](7.27-7.31/Monday/Flashcards.md)
+- [Notes](8.3-8.7/Monday/Notes.md)
+- [Objectives](8.3-8.7/Monday/Objectives.md)
 
-### **Tuesday** (Node.js & Git)
+### **Tuesday** (Element Selection)
 
-> | Node vs Browser | File I/O | Everything About Git |
+> | Selecting & Creating Elements | Appending Elements | Updating Elements |
 
-- [Notes](7.27-7.31/Tuesday/Notes.md)
-- [In Class: Scrum, Sprint, User Stores](7.27-7.31/Tuesday/Scrum-Sprint-UserStories.md) (Unfinished)
-- [Objectives](7.27-7.31/Tuesday/Objectives.md)
-- [Flashcards](7.27-7.31/Tuesday/Flashcards.md)
+- [Notes](8.3-8.7/Tuesday/Notes.md)
+- [Objectives]
 
-### **Wednesday**
+### **Wednesday** (Event Handling)
 
-> | Command Line Interface | Navigating File System | Common CLI Commands | Understanding Shell | Bash Permissions & Scripting |
+> | Common Page Events | Input Focus & Blur | Form Validation | Drag & Drop | Click Events with Targets | The Bubbling Principle |
 
-- [Notes](7.27-7.31/Wednesday/Notes.md)
-- [Objectives](7.27-7.31/Wednesday/Objectives.md)
+- [Notes]
+- [Objectives]
 
-### **Thursday** (Recursion)
+### **Thursday** (JSON & Storage)
 
-> | Recursion Basics | Recursion or Iteration? |
+> | Cookies & Web Storage | JSON | Web Storage |
 
-- [Notes](7.27-7.31/Thursday/Notes.md)
-- [Objectives](7.27-7.31/Thursday/Objectives.md)
-
-### **Friday** (JS Trivia)
-
-> | IIFE's | Interpolation | Object Key & Symbols | Primitive Data Types | Unsigned Variables |
-
-- [Notes](7.27-7.31/Friday/Notes.md)
-- [Flashcards](7.27-7.31/Friday/Flashcards.md)
-- [Objectives](7.27-7.31/Friday/Objectives.md)
+- [Notes]
+- [Objectives]
 
 ## **Previous Weeks**
 
 [Week One Folder](https://github.com/ALW93/App-Academy/tree/master/7.13-7.17)
 
 [Week Two Folder](https://github.com/ALW93/App-Academy/tree/master/7.20-7.24)
+
+[Week Three Folder](https://github.com/ALW93/App-Academy/tree/master/7.27-7.31s)
