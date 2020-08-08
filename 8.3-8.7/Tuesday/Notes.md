@@ -222,4 +222,3 @@ window.addEventListener("DOMContentLoaded", (event) => {
 ```
 
 ---
-## **

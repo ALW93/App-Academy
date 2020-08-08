@@ -20,7 +20,7 @@
 
 > | Common Page Events | Input Focus & Blur | Form Validation | Drag & Drop | Click Events with Targets | The Bubbling Principle |
 
-- [Notes]
+- [Notes](8.3-8.7/Wednesday/Notes.md)
 - [Objectives]
 
 ### **Thursday** (JSON & Storage)
