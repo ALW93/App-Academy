@@ -30,6 +30,10 @@
 - [Notes](8.3-8.7/Thursday/Notes.md)
 - [Objectives](8.3-8.7/Thursday/Objectives.md)
 
+### **Misc Resources**
+
+- [Practice Assessment Answers](8.3-8.7/Practice-Assessment.md)
+
 ## **Previous Weeks**
 
 [Week One Folder](https://github.com/ALW93/App-Academy/tree/master/7.13-7.17)
