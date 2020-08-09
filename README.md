@@ -27,7 +27,7 @@
 
 > | Cookies & Web Storage | JSON | Web Storage |
 
-- [Notes]
+- [Notes](8.3-8.7/Thursday/Notes.md)
 - [Objectives]
 
 ## **Previous Weeks**
