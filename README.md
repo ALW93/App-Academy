@@ -14,21 +14,21 @@
 > | Selecting & Creating Elements | Appending Elements | Updating Elements |
 
 - [Notes](8.3-8.7/Tuesday/Notes.md)
-- [Objectives]
+- [Objectives](8.3-8.7/Tuesday/Objectives.md)
 
 ### **Wednesday** (Event Handling)
 
 > | Common Page Events | Input Focus & Blur | Form Validation | Drag & Drop | Click Events with Targets | The Bubbling Principle |
 
 - [Notes](8.3-8.7/Wednesday/Notes.md)
-- [Objectives]
+- [Objectives](8.3-8.7/Wednesday/Objectives.md)
 
 ### **Thursday** (JSON & Storage)
 
 > | Cookies & Web Storage | JSON | Web Storage |
 
 - [Notes](8.3-8.7/Thursday/Notes.md)
-- [Objectives]
+- [Objectives](8.3-8.7/Thursday/Objectives.md)
 
 ## **Previous Weeks**
 
