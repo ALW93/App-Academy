@@ -2,37 +2,35 @@
 
 ## **Current Week** (8.3 - 8.7)
 
-### **Monday** (Browser Basics)
+### **Monday** (NPM)
 
-> | Browser & BOM | Request/Response Cycle | Window Object | Browser Cookies |
+> | Intro to Node Package Manager | NPM & Dependency Management | Using NPM | Ignoring Things in Git |
 
-- [Notes](8.3-8.7/Monday/Notes.md)
-- [Objectives](8.3-8.7/Monday/Objectives.md)
+- [Notes](8.10-8.14/Monday/Notes.md)
+- [Objectives](8.10-8.14/Monday/Objectives.md)
 
-### **Tuesday** (Element Selection)
+### **Tuesday** (Javascript Classes)
 
-> | Selecting & Creating Elements | Appending Elements | Updating Elements |
+> | Constructor Functions | JS Classes | JS Inheritance | JS Modules | Class Declarations | CommonJS Modules Usage | CommonJS Exports & Require |
 
-- [Notes](8.3-8.7/Tuesday/Notes.md)
-- [Objectives](8.3-8.7/Tuesday/Objectives.md)
+- [Notes](8.10-8.14/Tuesday/Notes.md)
+- [Objectives](8.10-8.14/Tuesday/Objectives.md)
 
-### **Wednesday** (Event Handling)
+### **Wednesday** (Object Oriented Programming)
 
-> | Common Page Events | Input Focus & Blur | Form Validation | Drag & Drop | Click Events with Targets | The Bubbling Principle |
+> | OOP Explained | SOLID Principles | The Law of Demeter | Single Responsibility Principle | Liskov Substitution Principle |
 
-- [Notes](8.3-8.7/Wednesday/Notes.md)
-- [Objectives](8.3-8.7/Wednesday/Objectives.md)
+- [Notes](8.10-8.14/Wednesday/Notes.md)
+- [Objectives](8.10-8.14/Wednesday/Objectives.md)
 
-### **Thursday** (JSON & Storage)
+### **Thursday** (Write your own ES6 Modules)
 
-> | Cookies & Web Storage | JSON | Web Storage |
+> | Using Classes in ES6 | Callbacks Review | Async Review | Connect Four Project |
 
-- [Notes](8.3-8.7/Thursday/Notes.md)
-- [Objectives](8.3-8.7/Thursday/Objectives.md)
+- [Notes](8.10-8.14/Thursday/Notes.md)
+- [Objectives](8.10-8.14/Thursday/Objectives.md)
 
 ### **Misc Resources**
-
-- [Practice Assessment Answers](8.3-8.7/Practice-Assessment.md)
 
 ## **Previous Weeks**
 
@@ -41,3 +39,5 @@
 [Week Two Folder](https://github.com/ALW93/App-Academy/tree/master/7.20-7.24)
 
 [Week Three Folder](https://github.com/ALW93/App-Academy/tree/master/7.27-7.31s)
+
+[Week Four Folder](https://github.com/ALW93/App-Academy/tree/master/8.3-8.7)
