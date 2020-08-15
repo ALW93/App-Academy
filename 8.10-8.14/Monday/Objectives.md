@@ -23,6 +23,9 @@
 
 **4. Use npm --version to check what version is currently installed and use npm to update itself to the latest version.**
 
+- `npm --version`
+- `npm install -g npm`
+
 **5. Use npm init to create a new package and npm install to add a package as a dependency. Then use require to import the module and utilize it in a JavaScript file.**
 
 **6. Given a package version number following the MAJOR.MINOR.PATCH semantic versioning spec that may include tilde (~) and caret (^) ranges, identify the range of versions of the package that will be compatible.**
