@@ -2,33 +2,27 @@
 
 ## **Current Week** (8.3 - 8.7)
 
-### **Monday** (NPM)
+### **Monday** (HTTP)
 
-> | Intro to Node Package Manager | NPM & Dependency Management | Using NPM | Ignoring Things in Git |
+> | HTTP Basics | HTTP Requests | HTTP Responses | Request - Response in the Browser |
 
-- [Notes](8.10-8.14/Monday/Notes.md)
-- [Objectives](8.10-8.14/Monday/Objectives.md)
+- [Notes](8.17-8.21/Monday/Notes.md)
+- [Objectives]
 
-### **Tuesday** (Javascript Classes)
+### **Tuesday**
 
-> | Constructor Functions | JS Classes | JS Inheritance | JS Modules | Class Declarations | CommonJS Modules Usage | CommonJS Exports & Require |
+- [Notes]
+- [Objectives]
 
-- [Notes](8.10-8.14/Tuesday/Notes.md)
-- [Objectives](8.10-8.14/Tuesday/Objectives.md)
+### **Wednesday**
 
-### **Wednesday** (Object Oriented Programming)
+- [Notes]
+- [Objectives]
 
-> | OOP Explained | SOLID Principles | The Law of Demeter | Single Responsibility Principle | Liskov Substitution Principle |
+### **Thursday**
 
-- [Notes](8.10-8.14/Wednesday/Notes.md)
-- [Objectives](8.10-8.14/Wednesday/Objectives.md)
-
-### **Thursday** (Write your own ES6 Modules)
-
-> | Using Classes in ES6 | Callbacks Review | Async Review | Connect Four Project |
-
-- [Notes](8.10-8.14/Thursday/Notes.md)
-- [Objectives](8.10-8.14/Thursday/Objectives.md)
+- [Notes]
+- [Objectives]
 
 ### **Misc Resources**
 
@@ -41,3 +35,5 @@
 [Week Three Folder](https://github.com/ALW93/App-Academy/tree/master/7.27-7.31s)
 
 [Week Four Folder](https://github.com/ALW93/App-Academy/tree/master/8.3-8.7)
+
+[Week Five Folder](https://github.com/ALW93/App-Academy/tree/master/8.10-8.14)
