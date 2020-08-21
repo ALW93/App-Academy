@@ -1,28 +1,35 @@
 # **Directory**
 
-## **Current Week** (8.3 - 8.7)
+## **Current Week** (8.17 - 8.21)
 
 ### **Monday** (HTTP)
 
 > | HTTP Basics | HTTP Requests | HTTP Responses | Request - Response in the Browser |
 
 - [Notes](8.17-8.21/Monday/Notes.md)
-- [Objectives]
+- [Objectives](8.17-8.21/Monday/Objectives.md)
 
-### **Tuesday**
+### **Tuesday** (Promises)
 
-- [Notes]
-- [Objectives]
+> | Promises | Fetch API Using node-fetch |
 
-### **Wednesday**
+- [Notes](8.17-8.21/Tuesday/Notes.md)
+- [Objectives](8.17-8.21/Tuesday/Objectives.md)
 
-- [Notes]
-- [Objectives]
+### **Wednesday** (Promises Continued, HTML)
 
-### **Thursday**
+> | Modern Promises | Revisiting HTML |
 
-- [Notes]
-- [Objectives]
+- [Notes](8.17-8.21/Wednesday/Notes.md)
+- [Objectives](8.17-8.21/Wednesday/Objectives.md)
+
+### **Thursday** (Testing)
+
+> | Testing | Test-Driven Development | JS Error Types | Writing Tests | Automated Testing | Reading Tests |
+
+- [Notes](8.17-8.21/Thursday/Notes.md)
+- [Objectives](8.17-8.21/Thursday/Objectives.md)
+- [Flashcards](8.17-8.21/Thursday/Flashcards.md)
 
 ### **Misc Resources**
 
