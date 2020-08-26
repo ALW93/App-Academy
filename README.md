@@ -14,7 +14,7 @@
 
 ### **Wednesday** (Sorting Algorithms)
 
-- [Notes]
+- [Notes](8.24-8.28/Wednesday/Notes.md)
 - [Objectives]
 
 ### **Thursday** (Lists Stacks Queues)
