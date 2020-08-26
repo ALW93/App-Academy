@@ -2,34 +2,27 @@
 
 ## **Current Week** (8.17 - 8.21)
 
-### **Monday** (HTTP)
+### **Monday** (Github Identity)
 
-> | HTTP Basics | HTTP Requests | HTTP Responses | Request - Response in the Browser |
+- [Notes](8.24-8.28/Monday/Notes.md)
+- [Objectives]
 
-- [Notes](8.17-8.21/Monday/Notes.md)
-- [Objectives](8.17-8.21/Monday/Objectives.md)
+### **Tuesday** (Big O and Optimization)
 
-### **Tuesday** (Promises)
+- [Notes](8.24-8.28/Tuesday/Notes.md)
+- [Objectives]
 
-> | Promises | Fetch API Using node-fetch |
+### **Wednesday** (Sorting Algorithms)
 
-- [Notes](8.17-8.21/Tuesday/Notes.md)
-- [Objectives](8.17-8.21/Tuesday/Objectives.md)
+- [Notes]
+- [Objectives]
 
-### **Wednesday** (Promises Continued, HTML)
+### **Thursday** (Lists Stacks Queues)
 
-> | Modern Promises | Revisiting HTML |
+- [Notes]
+- [Objectives]
 
-- [Notes](8.17-8.21/Wednesday/Notes.md)
-- [Objectives](8.17-8.21/Wednesday/Objectives.md)
-
-### **Thursday** (Testing)
-
-> | Testing | Test-Driven Development | JS Error Types | Writing Tests | Automated Testing | Reading Tests |
-
-- [Notes](8.17-8.21/Thursday/Notes.md)
-- [Objectives](8.17-8.21/Thursday/Objectives.md)
-- [Flashcards](8.17-8.21/Thursday/Flashcards.md)
+### **Friday** (Heaps)
 
 ### **Misc Resources**
 
@@ -44,3 +37,5 @@
 [Week Four Folder](https://github.com/ALW93/App-Academy/tree/master/8.3-8.7)
 
 [Week Five Folder](https://github.com/ALW93/App-Academy/tree/master/8.10-8.14)
+
+[Week Six Folder](https://github.com/ALW93/App-Academy/tree/master/8.17-8.21)
