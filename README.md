@@ -5,26 +5,25 @@
 ### **Monday** (Github Identity)
 
 - [Notes](8.24-8.28/Monday/Notes.md)
-- [Objectives]
 
 ### **Tuesday** (Big O and Optimization)
 
 - [Notes](8.24-8.28/Tuesday/Notes.md)
-- [Objectives]
 
 ### **Wednesday** (Sorting Algorithms)
 
 - [Notes](8.24-8.28/Wednesday/Notes.md)
-- [Objectives]
 
 ### **Thursday** (Lists Stacks Queues)
 
-- [Notes]
-- [Objectives]
-
-### **Friday** (Heaps)
+- [Notes] WIP But please just do the projects.
 
 ### **Misc Resources**
+
+- [Identifying Time Complexity](8.24-8.28/Misc/ID-Big-O.md)
+- [Memo & Tab Fib](8.24-8.28/Misc/Memo-tab-fib.md)
+- [Sorting Algo's](8.24-8.28/Misc/Sorting-Algo.md)
+- [Dynamic Programming Problems]
 
 ## **Previous Weeks**
 
