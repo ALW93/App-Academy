@@ -111,12 +111,12 @@ const printAlot = (li) => {
 ```
 
 ```js
-function lin(n) {
+function actuallyLin(n) {
   if (n <= 1) return;
   for (let i = 0; i <= n; i++) {
     console.log(i);
   }
-  lin(n - 1);
+  actuallyLin(n / 2);
 }
 ```
 
@@ -131,8 +131,10 @@ function logLinear(n) {
   for (let i = 0; i <= n; i++) {
     console.log(i);
   }
-  logLinear(n / 2);
-  logLinear(n / 2);
+  logLinear(n / 4);
+  logLinear(n / 4);
+  logLinear(n / 4);
+  // logLinear(n / 2);
 }
 // runtime is log linear
 // T(nlog(n)); Merge sort;

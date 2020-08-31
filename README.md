@@ -2,28 +2,26 @@
 
 ## **Current Week** (8.17 - 8.21)
 
-### **Monday** (Github Identity)
+### **Monday** (Whiteboarding Tips)
 
-- [Notes](8.24-8.28/Monday/Notes.md)
+- [Notes](8.31-9.4/Monday/Notes.md)
 
-### **Tuesday** (Big O and Optimization)
+### **Tuesday** (Binary Trees)
 
-- [Notes](8.24-8.28/Tuesday/Notes.md)
+- [Notes]
+- [Objectives]
 
-### **Wednesday** (Sorting Algorithms)
+### **Wednesday** (Graphs)
 
-- [Notes](8.24-8.28/Wednesday/Notes.md)
+- [Notes]
+- [Objectives]
 
-### **Thursday** (Lists Stacks Queues)
+### **Thursday** (Network Knowledge)
 
-- [Notes] WIP But please just do the projects.
+- [Notes]
+- [Objectives]
 
 ### **Misc Resources**
-
-- [Identifying Time Complexity](8.24-8.28/Misc/ID-Big-O.md)
-- [Memo & Tab Fib](8.24-8.28/Misc/Memo-tab-fib.md)
-- [Sorting Algo's](8.24-8.28/Misc/Sorting-Algo.md)
-- [Dynamic Programming Problems]
 
 ## **Previous Weeks**
 
@@ -38,3 +36,5 @@
 [Week Five Folder](https://github.com/ALW93/App-Academy/tree/master/8.10-8.14)
 
 [Week Six Folder](https://github.com/ALW93/App-Academy/tree/master/8.17-8.21)
+
+[Week Seven Folder](https://github.com/ALW93/App-Academy/tree/master/8.24-8.28)
