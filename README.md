@@ -1,6 +1,6 @@
 # **Directory**
 
-## **Current Week** (8.17 - 8.21)
+## **Current Week** (8.31 - 9.4)
 
 ### **Monday** (Whiteboarding Tips)
 
@@ -8,18 +8,15 @@
 
 ### **Tuesday** (Binary Trees)
 
-- [Notes]
-- [Objectives]
+- [Notes](8.31-9.4/Tuesday/Notes.md)
 
 ### **Wednesday** (Graphs)
 
-- [Notes]
-- [Objectives]
+- [Notes](8.31-9.4/Wednesday/Notes.md)
 
 ### **Thursday** (Network Knowledge)
 
-- [Notes]
-- [Objectives]
+- [Notes](8.31-9.4/Thursday/Notes.md)
 
 ### **Misc Resources**
 
