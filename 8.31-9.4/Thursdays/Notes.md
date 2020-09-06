@@ -4,8 +4,37 @@
 
 ## **OSI Network Model**
 
-- **OSI** : The Open Systems Interconnection reference model is a well known Network Model created in the UK that has both conceptual layers **and** suggested protocols for each.
+- **`OSI`** : The Open Systems Interconnection reference model is a well known Network Model created in the UK that has both conceptual layers **and** suggested protocols for each.
+
   - There are seven layers to the OSI Model.
+    ![osilayer](https://assets.aaonline.io/Module-Web/network/image-network-models-osi.svg)
+  - **`Application`** : Includes information used by client-side software, data from this later interacts directly with applications. (i.e. HTTP)
+  - **`Presentation`** : The syntax later that converts data from machine-readable to human-readable. Includes data compression, encryption, and character encoding. (i.e. JPEG & GIF)
+  - **`Session`** : Includes protocols responsible for authentication and data continuity. Includes authorization or re-establishing a dropp connection. (i.e. RPC (Remote Procedure Call))
+  - **`Transport`** : Utilization of transport protocols (i.e. TCP and UDP)
+  - **`Network`** : Basically the internet layer (i.e. IP)
+  - **`Data Link`** : Deal with connections from one machine's network interface to another. (i.e. ethernet)
+  - **`Physical`** : Translating raw electrical signals to bits & bytes of data. (i.e. Wi-Fi & DSL)
+
+- It is important to remember that OSI Model is highly conceptual, it's practical uses are limited.
+- TCP/IP is much more practical compared to OSI, but it is purely practical.
+
+---
+
+## **TCP/IP Model**
+
+- **`Reference Model`** : A High-level overview of a complex topic provided by an organization that manages it.
+
+**Layers of the TCP/IP Model**
+![tcpiplayer](https://assets.aaonline.io/Module-Web/network/image-network-models-tcp-ip.svg)
+
+- **`Application`** : Includes protocols related to user-facing data. Anything that is transmitted from the Transport layer is considered Application Layer Data (i.e. HTTP & FTP)
+- **`Transport`** : TCP & UDP.
+- **`Internet`** : Connects separate networks together (IP)
+- **`Link`** : Lower-level communication standards.
+- **`Physical?`** : There is a supposed fifth layer that cinludes all the electrical concepts that span across wires, but it is not officially stated.
+  ![encap](https://assets.aaonline.io/Module-Web/network/image-network-models-encapsulation.svg)
+- We can think of the layers of our reference model as being **encapsulated**.
 
 ---
 
