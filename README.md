@@ -16,7 +16,7 @@
 
 ### **Thursday** (Network Knowledge)
 
-- [Notes](8.31-9.4/Thursday/Notes.md)
+- [Notes](8.31-9.4/Thursdays/Notes.md)
 
 ### **Misc Resources**
 
