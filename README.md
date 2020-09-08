@@ -2,21 +2,29 @@
 
 ## **Current Week** (8.31 - 9.4)
 
-### **Monday** (Whiteboarding Tips)
+### **Tuesday** (Basic CSS)
 
-- [Notes](8.31-9.4/Monday/Notes.md)
+> | Selectors | Type, Properties, and Imports | Colors, Borders, Shadows |
 
-### **Tuesday** (Binary Trees)
+- [Notes](9.8-9.11/Tuesday/Notes.md)
 
-- [Notes](8.31-9.4/Tuesday/Notes.md)
+### **Wednesday** (AJAX)
 
-### **Wednesday** (Graphs)
+> | Ajax Steps | Ajax Demo |
 
-- [Notes](8.31-9.4/Wednesday/Notes.md)
+- [Notes](9.8-9.11/Wednesday/Notes.md)
 
-### **Thursday** (Network Knowledge)
+### **Thursday** (Layouts)
 
-- [Notes](8.31-9.4/Thursdays/Notes.md)
+> | Media Queries | Flexbox | Grid |
+
+- [Notes](9.8-9.11/Thursday/Notes.md)
+
+### **Friday** (Interactivity & Maintainability)
+
+> | Block, Element, Modifier | Button Hover |
+
+- [Notes](9.8-9.11/Friday/Notes.md)
 
 ### **Misc Resources**
 
@@ -35,3 +43,5 @@
 [Week Six Folder](https://github.com/ALW93/App-Academy/tree/master/8.17-8.21)
 
 [Week Seven Folder](https://github.com/ALW93/App-Academy/tree/master/8.24-8.28)
+
+[Week Eight Folder](https://github.com/ALW93/App-Academy/tree/master/8.31-9.4)
