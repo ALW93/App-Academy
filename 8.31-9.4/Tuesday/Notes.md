@@ -32,6 +32,8 @@ c.right = f;
 **Basic Tree Terminology**
 
 - **`Tree`** : Graph with no cycles.
+  - Cycle is a path through edges that begins and ends at the same node.
+  - In CS, trees must have roots!
 - **`Binary Tree`** : Tree where nodes have at most 2 nodes.
 - **`Root`** : The ultimate parent, the single node s tree that can access every other node through edges; root does not have a parent.
 - **`Internal Node`** : Node that has children.
@@ -69,14 +71,53 @@ c.right = f;
 
 ![pic](https://upload.wikimedia.org/wikipedia/commons/d/dc/Sorted_binary_tree_ALL.svg)
 
-- **Pre-Order Traversal** : Red Dots
-- **In-Order Traversal** : Yellow Dots
-- **Post-Order Traversal** : Green Dots
+- **`Pre-Order Traversal`** :
 
-**Binary Search Trees**
+  - F, B, A, D, C, E, G, I, H
+  - Access data of the current Node
+  - Recursively visit the left sub tree
+  - Recursively visit the right sub tree
+
+- **`In-Order Traversal`** :
+
+  - A, B, C, D, E, F, G, H, I
+  - Recursively visit the left sub tree
+  - Access the data of the current node
+  - Recursively visit the right sub tree
+
+- **`Post-Order Traversal`** :
+
+  - A, C, E, D, B, H, I, G, F
+  - Recursively visit the left sub tree
+  - Recursively visit the right sub tree
+  - Access the data of the current node
+
+**`Binary Search Trees`**
 
 - A Binary Tree is a **Binary Search Tree** if:
   - The left subtree contains values less than the root.
   - AND the right subtree contains values greater than or equal to the root
   - AND the left subtree is a Binary Search Tree
   - AND the right subtree is a Binary Search Tree
+
+![bst](https://assets.aaonline.io/data_structures_algorithms/binary_search_trees/images/bsts.png)
+
+- BSTs are sorted Data Structures
+- If this printing function is called on a BST, the values will be print out in ascending order.
+
+```js
+function inOrderPrint(root) {
+  if (!root) return;
+
+  inOrderPrint(root.left);
+  console.log(root.val);
+  inOrderPrint(root.right);
+}
+// BST 1: 42
+// BST 2: 4, 5, 6
+// BST 3: 1, 5, 7, 10, 16, 16
+```
+
+- The best BSTs are **height balanced**.
+
+---
