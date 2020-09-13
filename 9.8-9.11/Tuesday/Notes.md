@@ -217,3 +217,53 @@ h2.subheading {
 - Coming back to our example where all the CSS Rules have tied, the last step 4 wins out so our element will have a `purple border`.
 
 ---
+
+## **CSS: Type, Properties, and Imports**
+
+**Typography**
+
+- **`font-family`** : change the font.
+  - ![fonts](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/attributes/assets/properties-generic-font-names.png)
+  - Remember that not all computers have the same fonts on them.
+  - You can import web fonts via an api by using
+    - `@import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap');` and pasting it st the top of your CSS file.
+    - And then reference it in your font-family.
+- **`font-size`** : Changes the size of your font.
+  - Keep in mind the two kind of units CSS uses:
+    - **`Absolute`** : **`Pixels`**, Points, Inches, Centimeters.
+    - **`Relative`** : Em, Rem.
+      - Em: Calulating the size relative to the previous div (bubbles down)
+      - Rem: Calulates relative to the parent element always.
+- **`font-style`** : Used to set a font to italics.
+- **`font-weight`** : Used to make a font bold.
+- **`text-align`** : Used to align your text to the left, center, or right.
+- **`text-decoration`** : Use to put lines above, through, or under text. Lines can be solid, dashed, or wavy!
+- **`text-transform`** : Used to set text to all lowercase, uppercase, or capitalize all words.
+
+**Background-Images**
+
+- You can use the background-image property to set a background image for an element.
+
+---
+
+## **CSS: Colors, Borders, and Shadows**
+
+**Colors**
+
+- You can set colors in CSS in three popular ways: by name, by hexadecimal RGB value, and by their decimal RGB value.
+- rgba() is used to make an rbg value more transparent, the `a` is used to specify the `alpha channel`.
+- **Color** : Property used to change the color of text.
+- **Background-Color** : Property to change the backgrounf color of an element.
+
+**Borders**
+
+- Borders take three values: The width of the border, the style (i.e. solid, dotted, dashed), color of the border.
+
+**Shadows**
+
+- There are two kinds of shadows in CSS: **`box shadows`** and **`text shadows`**.
+  - Box refers to HTML elements.
+  - Text refers to text.
+  - Shadows take values such as, the horizontal & vertical offsets of the shadow, the blur radius of the shadow, the spread radius, and of course the colors.
+
+---
