@@ -75,3 +75,54 @@ fetch("https://jservice.xyz/api/categories", {
   - Tl;DR Don't forget to check the `ok` key and place a catch error handler at the end of the promise chain.
 
 **AJAX Broken Down**
+
+![AJAX diagram](https://assets.aaonline.io/Module-Web/ajax/ajax.svg)
+
+```js
+<button class="want-to-read">Want to Read</button>
+
+<script>
+  document.querySelector(".want-to-read").addEventListener("click", function() {
+    fetch(`https://api.goodreads.com/books/${BOOK_ID}/update-status`, {
+      method: "PATCH", // using PATCH since we'll just be modifying the book's status
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        status: "Want to Read"
+      })
+    })
+      .then(function(res) {
+        if (!res.ok) {
+          throw Error(res.statusText); // handle any potential server errors
+        }
+        return res.json(); // extract JSON from the response
+      })
+      .then(function(data) {
+        document.querySelector(".want-to-read").innerHTML = "✓ Want To Read";
+      })
+      .catch(function(error) {
+        const errorMessage = document.createElement("p");
+        errorMessage.appendChild(
+          document.createTextNode("Something went wrong. Please try again!")
+        );
+
+        // This example appends an error message to the body for simplicity's sake.
+        // Please do not copy this kind of DOM manipulation in your own projects:
+        document.querySelector("body").appendChild(errorMessage);
+      });
+  });
+</script>
+```
+
+1. When we first send out the event listener and fetch with filled out options this is ths segment where we are conducting the `Javascript Call`.
+
+2. When the request is sent out it is the arrow leading from the AJAX engine to the Web Server.
+
+3. The arrow from the Web Server back to the AJAX engine is the response from the Server in either XML or JSON format.
+
+4. The response is handled within the AJAX engine and returns the new HTML & CSS for the UI.
+
+- Always rememer to check to see if the `ok` response is received so that potentials errors can be handled correctly.
+
+---
