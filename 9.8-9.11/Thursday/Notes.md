@@ -214,3 +214,107 @@
 ---
 
 ## **Grid Layout**
+
+- CSS Grid is a 2d layout system that let's use create a grid with columns and rows purely using Vanilla CSS. (flex is one dimensional)
+
+**Bootstrap vs CSS Grid**
+
+- Bootstrap was a front-end library commonly used to create grid layouts but now CSS grid provides greater flexibility and control.
+- Grid applies style to a parent container and it's child elements.
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header"
+    "main . sidebar"
+    "footer footer footer";
+
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  justify-items: stretch;
+  align-items: stretch;
+  justify-content: stretch;
+  align-content: stretch;
+}
+
+.item-1 {
+  grid-area: header;
+}
+.item-2 {
+  grid-area: main;
+}
+.item-3 {
+  grid-area: sidebar;
+}
+.item-4 {
+  grid-area: footer;
+}
+```
+
+- Columns and Rows can be defined with: pixels, percentages, auto, named grid lines, using `repeat`, fractions.
+- **`Grid Template Areas`** gives us a handy way to map out and visualize areas of the grid layout.
+- Combine areas with templates to define how much space an area should take up.
+- **`Grid Gaps`** can be used to create 'gutters' between grid item.s
+
+- The way we have defined our grid with `grid-templates` and `areas` are condidered **explicit**.
+
+- We can also **`implicitly`** define grids.
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 50px 50px 50px;
+  grid-auto-columns: 100px;
+  grid-auto-rows: 50px;
+}
+```
+
+- Any grid items that aren't explicity placed are automatically placed or _re-flowed_
+
+**Spanning Columns & Rows**
+
+- We can use the following properties to take up a specified num of cols and rows.
+
+  - **`grid-column-start`**
+  - **`grid-column-end`**
+  - **`grid-row-start`**
+  - **`grid-row-end`**
+
+- All four properties can take any of the following values: the line number, span #, span name, auto.
+
+```css
+.item-1 {
+  grid-row-start: row2-start; /* Item starts at row line named “row2-start” */
+  grid-row-end: 5; /* Item ends at row line 5 */
+  grid-column-start: 1; /* Item starts at column line 1 */
+  grid-column-end: three; /* Item ends at column line named “three” */
+}
+
+.item-2 {
+  grid-row-start: 1; /* Item starts at row line 1 */
+  grid-row-end: span 2; /* Item spans two rows and ends at row line 3 */
+  grid-column-start: 3; /* Item starts at column line 3 */
+  grid-column-end: span col5-start; /* Item spans and ends at line named “col5-start” */
+}
+```
+
+**Grid Areas**
+
+- We use the grid areas in conjunction with grid-container property to **define sections of the layout**.
+- We can then assign named sections to individual element's css rules.
+
+**Justify & Align Self**
+
+- Justify items and Align Items can be used to align all grid items at once.
+- **Justify Self** is used to align self on the row.
+
+  - It can take four values: start, end, center, stretch.
+
+- **Align Self** is used to align self on the column.
+  - It can take four values: start, end, center, stretch.
+
+---
