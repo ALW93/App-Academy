@@ -175,3 +175,42 @@
 ---
 
 ## **Flexible Box Model**
+
+- Flexbox is a **CSS module** that provides a convenient way for us to display items inside a flexible container so that the layout is responsive.
+
+* Float was used back in the day to display position of elements in a container.
+  - A very inconvenient aspect of float is the need to _clear_ the float.
+  - To 'clear' a float we need to set up a ghost div to properly align - this is already sounds so inefficient.
+
+**Using Flexbox**
+
+- Flexbox automatically resizes a container element to fit the viewport size without needing to use breakpoints.
+  ![flex](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/flexbox/assets/flexbox-elements.png)
+
+- Flexbox layout applies styles to the parent element, and it's children.
+
+```css
+.container {
+  display: flex; /*sets display to use flex*/
+  flex-wrap: wrap; /*bc flex tries to fit everything into one line, use wrap to have the elements wrap to the next line*/
+  flex-direction: row; /*lets us create either rows or columns*/
+}
+```
+
+- **`flex-flow`** can be used to combine wrap and direction.
+- **`justify-content`** used to define the alignment of flex items along the main axis.
+- **`align-items`** used to define the alignment on the Y-axis.
+- **`align-content`** redistributes extra space on the cross axis.
+
+- By default, flex items will appear in the order they are added to the DOM, but we can use the `order` property to change that.
+
+- Some other properties we can use on flex items are:
+  - `flex-grow` : dictates amount of avail. space the item should take up.
+  - `flex-shrink` : defines the ability for a flex item to shrink.
+  - `flex-basis` : Default size of an element before the remaining space is distributed.
+  - `flex` : shorthand for grow, shrink and basis.
+  - `align-self` : Overrides default alignment in the container.
+
+---
+
+## **Grid Layout**
