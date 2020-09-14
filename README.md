@@ -2,29 +2,29 @@
 
 ## **Current Week** (8.31 - 9.4)
 
-### **Tuesday** (Basic CSS)
+### **Monday** (RDBMS and Database Entities)
 
-> | Selectors | Type, Properties, and Imports | Colors, Borders, Shadows |
+> | Creating DB Entities | DB Lingo | Installing SQL | DB Management | Table Management |
 
-- [Notes](9.8-9.11/Tuesday/Notes.md)
+- [Notes](9.14-9.18/Monday/Notes.md)
 
-### **Wednesday** (AJAX)
+### **Tuesday** (SQL)
 
-> | Ajax Steps | Ajax Demo |
+> | Inserting DATA | Updating DATA | Deleting DATA | Selecting Simple Data | Joining Tables |
 
-- [Notes](9.8-9.11/Wednesday/Notes.md)
+- [Notes](9.14-9.18/Tuesday/Notes.md)
 
-### **Thursday** (Layouts)
+### **Wedneday** (SQL Continued)
 
-> | Media Queries | Flexbox | Grid |
+> | Relational DB Design | Transactions | Subqueries | EXPLAIN |
 
-- [Notes](9.8-9.11/Thursday/Notes.md)
+- [Notes](9.14-9.18/Wednesday/Notes.md)
 
-### **Friday** (Interactivity & Maintainability)
+### **Thursday** (Sequelize ORM)
 
-> | Block, Element, Modifier | Button Hover |
+> | Installing Sequelize | DB Migrations | CRUD Ops | Querying with Sequelize | Validations with Sequelize | Transactions with Sequelize |
 
-- [Notes](9.8-9.11/Friday/Notes.md)
+- [Notes](9.14-9.18/Thursday/Notes.md)
 
 ### **Misc Resources**
 
@@ -45,3 +45,5 @@
 [Week Seven Folder](https://github.com/ALW93/App-Academy/tree/master/8.24-8.28)
 
 [Week Eight Folder](https://github.com/ALW93/App-Academy/tree/master/8.31-9.4)
+
+[Week Nine Folder](https://github.com/ALW93/App-Academy/tree/master/9.8-9.11)
