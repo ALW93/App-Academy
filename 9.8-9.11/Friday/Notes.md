@@ -83,3 +83,66 @@
 ---
 
 ## **BEM Guidelines**
+
+- BEM was created as a guideline to solve the issue of loose standards around CSS naming conventions.
+- **BEM** stands for `block`, `element`, `modifier`.
+- **Block**
+
+  - A standalone entity that is meaningful on it's own.
+  - Can be nested and interact with one another.
+  - Holistic entities without DOM rep can be blocks.
+  - May consist latin letters, digits, and dashes.
+  - Any DOM node can be a block if it accepts a class name.
+
+- **Element**
+
+  - Part of a block and has no standalone meaning.
+  - Any element that is semantically tied to a block.
+  - May consist latin letters, digits, and dashes.
+  - Formed by using two underscores after it's block name.
+  - Any DOM node within a block can be an element.
+  - Element classes should be used independently.
+
+- **Modifier**
+  - A flag on blocks or elements. Use them to change appearance, behavior or state.
+  - Extra class name to add onto blocks or elements.
+  - Add mods only to the elements they modify.
+  - Modifier names may consist of Latin letters, digits, dashes and underscores.
+  - Written with two dashes.
+
+**BEM Example**
+
+```html
+<form class="form form--theme-xmas form--simple">
+  <input class="form__input" type="text" />
+  <input class="form__submit form__submit--disabled" type="submit" />
+</form>
+```
+
+```css
+/* block selector */
+.form {
+}
+
+/* block modifier selector */
+.form--theme-xmas {
+}
+
+/* block modifier selector */
+.form--simple {
+}
+
+/* element selector */
+.form__input {
+}
+
+/* element selector */
+.form__submit {
+}
+
+/* element modifier selector */
+.form__submit--disabled {
+}
+```
+
+---
