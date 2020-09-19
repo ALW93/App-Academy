@@ -139,3 +139,16 @@
 - References keep our database clean, using foreign keys maintains our database integrity.
 
 ## **Database Lingo**
+
+- **`RDBMS`** : Software application that you can run so that your programs can connect and store, modify, and retrieve data. (We will be using PostgreSQL)
+- **`Database or Relational Database`** : Collection of structures data that the RDBMS manages for you. (One RDBMS can have hundreds of Databases!)
+- **`SQL`** : Structured Query Language, which is a declarative programming language.
+
+  - SQL works on _sets_ of records.
+  - Using SQL takes two steps:
+    - Connect to an RDBMS with a user acccess.
+    - Issue SQL Statements to alter structure of DB or data inside those DB's.
+
+- Some popular RDBMS include: Informix, Microsoft Access, Microsoft SQL Server, MySQL, Oracle DB, SQLite.
+
+---
