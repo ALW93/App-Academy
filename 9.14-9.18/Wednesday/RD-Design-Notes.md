@@ -50,3 +50,110 @@
 ---
 
 ## **Transactions**
+
+- Using Transactions allow us to make changes to a SQL database in a consistent and durable way, and it is considered best practice to use them regularly.
+
+- **`Transaction`** : Single unit of work, which can contain multiple operations, performed on a database.
+  - Bundles multiple steps into a single, all-or-nothing operation.
+
+**Implicit vs. explicit transactions**
+
+- Technically every SQL statement is a transaction.
+
+```sql
+INSERT INTO hobbits(name,purpose)
+  VALUES('Frodo','Destroy the One Ring of power.');
+```
+
+- This statement would be a **`implicit`** transaction.
+- On the flip side **`explicit`** transactions will allow us to create save points and roll back to whatever point in time we choose.
+
+**PostgreSQL transactional commands**
+
+- **`BEGIN`** : Initiates a transaction block. All Statements after a BEGIN command will be executed in a single transaction until COMMIT or ROLLBACK is called.
+
+```sql
+BEGIN;
+  INSERT INTO hobbits(name,purpose)
+    VALUES('Frodo','Destroy the One Ring of power.');
+```
+
+- **`COMMIT`** : Commits a current transaction, all changes made by this transaction become visible to others and are guaranteed to be durable if a crash occurs.
+
+```sql
+BEGIN;
+  INSERT INTO hobbits(name,purpose)
+    VALUES('Frodo','Destroy the One Ring of power.');
+COMMIT;
+```
+
+- **`ROLLBACK`** : Rolls back current transaction and removes all updates made by the transaction.
+
+```sql
+BEGIN;
+  INSERT INTO hobbits(name,purpose)
+    VALUES('Frodo','Destroy the One Ring of power.');
+ROLLBACK;
+```
+
+- **`SAVEPOINT`** : Establishes a new save point within the current transaction.
+
+```sql
+BEGIN;
+  DELETE FROM fellowship
+    WHERE age > 100;
+  SAVEPOINT first_savepoint;
+  DELETE FROM fellowship
+    WHERE age > 80;
+  DELETE FROM fellowship
+    WHERE age >= 40;
+  ROLLBACK TO first_savepoint;
+COMMIT;
+```
+
+- **`SET TRANSACTION`** : Sets the characteristics of the current transaction.
+
+```sql
+BEGIN;
+  SET TRANSACTION READ ONLY;
+  ...
+COMMIT;
+```
+
+**When to use transactions and why**
+
+- Good to use when making any updates, insertions, or deletions to a database.
+
+- Help us deal with crashes, failures, data consistency, and error handling.
+
+- **`Atomicity`** is another feature that is a benefit of transactions.
+
+**Transaction properties: ACID**
+
+- A SQL transaction has four properties known collectively as **`ACID`** (Atomic, Consistent, Isolated, and Durable)
+- **`Atomicity`** : All changes to data are performed as if they are a single operation.
+  - You can also refer to the A as 'Abortability'
+  - I.E. if an app transfers funds from one account to another, the atomic nature of transactions will ensure that if a debt is successfully made, the credit will be properly transferred.
+- **`Consistency`** : Data is in a consistent start when a transaction starts and ends.
+  - I.E. if a transfer is scheduled, this prop ensures total value of funds in both accounts is the same at the start and end of a transaction.
+- **`Isolation`** : Intermediate state of a transaction is invisible to othe rtransactioned, they appear to be serialized.
+  - I.E. continuing our money transfer example, when a transfer occurs this prop ensures that transactions can see funds in one account or the other BUT NOT both NOR neither.
+- **`Durable`** : After a transaction successfully completes, changes to data persists and are not undone even in system failure.
+  - I.E. this prop ensures our transaction will success and cannot be reversed in the event of a failure.
+
+**Banking transaction example**
+
+```sql
+BEGIN;
+  UPDATE accounts SET balance = balance - 100.00
+      WHERE name = 'Alice';
+  UPDATE branches SET balance = balance - 100.00
+      WHERE name = (SELECT branch_name FROM accounts WHERE name = 'Alice');
+  UPDATE accounts SET balance = balance + 100.00
+      WHERE name = 'Bob';
+  UPDATE branches SET balance = balance + 100.00
+      WHERE name = (SELECT branch_name FROM accounts WHERE name = 'Bob');
+COMMIT;
+```
+
+---
