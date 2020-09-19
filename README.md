@@ -6,25 +6,25 @@
 
 > | Creating DB Entities | DB Lingo | Installing SQL | DB Management | Table Management |
 
-- [Notes](9.14-9.18/Monday/Notes.md)
+- [Notes](9.14-9.18/Monday/Database-Notes.md)
 
 ### **Tuesday** (SQL)
 
 > | Inserting DATA | Updating DATA | Deleting DATA | Selecting Simple Data | Joining Tables |
 
-- [Notes](9.14-9.18/Tuesday/Notes.md)
+- [Notes](9.14-9.18/Tuesday/SQL-Notes.md)
 
 ### **Wedneday** (SQL Continued)
 
 > | Relational DB Design | Transactions | Subqueries | EXPLAIN |
 
-- [Notes](9.14-9.18/Wednesday/Notes.md)
+- [Notes](9.14-9.18/Wednesday/RD-Design-Notes.md)
 
 ### **Thursday** (Sequelize ORM)
 
 > | Installing Sequelize | DB Migrations | CRUD Ops | Querying with Sequelize | Validations with Sequelize | Transactions with Sequelize |
 
-- [Notes](9.14-9.18/Thursday/Notes.md)
+- [Notes](9.14-9.18/Thursday/ORM-Notes.md)
 
 ### **Misc Resources**
 
