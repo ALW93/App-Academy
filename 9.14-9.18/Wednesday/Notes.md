@@ -1,61 +1,52 @@
 # **Notes**
 
-## **Using Select**
+## **Relational Database Design**
 
-**What is a Query?**
+## **Creating a Schema For Relational Database Design**
 
-- **`Query`** : A question we're asking a database, aiming to get a response back.
+- Schemas allow us to easily visualize database tables and their relationships to one another.
 
-- `psql -U postgres`
-  - Let's us access the postgres server as the user 'postgres'
-  - `-U` stands for 'user'.
-  - `\q` is used to quit postgres at any time.
+**What is Relational Database Design?**
 
-```sql
-create table puppies (
-  name VARCHAR(100),
-  age_yrs NUMERIC(2,1),
-  breed VARCHAR(100),
-  weight_lbs INT,
-  microchipped BOOLEAN
-);
+- **RDD** : Relational Database Design differs from other Databases because data is organized into tables and all types of data access are carried out via controlled transactions.
+  - Remember: Tables = Entities, Rows = Records, Columns = Fields.
 
-insert into puppies
-values
-('Cooper', 1, 'Miniature Schnauzer', 18, 'yes');
+**Stages of Relational Database Design**
 
-insert into puppies
-values
-('Indie', 0.5, 'Yorkshire Terrier', 13, 'yes'),
-('Kota', 0.7, 'Australian Shepherd', 26, 'no'),
-('Zoe', 0.8, 'Korean Jindo', 32, 'yes'),
-('Charley', 1.5, 'Basset Hound', 25, 'no'),
-('Ladybird', 0.6, 'Labradoodle', 20, 'yes'),
-('Callie', 0.9, 'Corgi', 16, 'no'),
-('Jaxson', 0.4, 'Beagle', 19, 'yes'),
-('Leinni', 1, 'Miniature Schnauzer', 25, 'yes' ),
-('Max', 1.6, 'German Shepherd', 65, 'no');
-```
+1. **`Define the purpose & entitites of the Relational DB.`**
 
-- SQL Data Types listed here:
-  - **`varchar(n)`** : variable length char, n represents the limit.
-  - **`numeric(p, s)`** : floating point number, with _p_ digits and _s_ number of places after the decimal point.
-  - **`int`** : 4 byte integer.
-  - **`boolean`** : regular boolean value.
+   - Why is the database being created?
+   - What problem is it solving?
+   - What is the data used for?
 
-* **`SELECT Query`** : Query used to get results back from a table.
-  - Syntax `SELECT [columns] FROM [table]`.
-  - You can use `SELECT *` to get all rows back in a given table.
-  - To select multiple columns you could use:
-    ```sql
-    SELECT name
-        , age_yrs
-        , weight_lbs
-    FROM puppies;
-    ```
-  - It is recommended to perform queries with multi-line formatting because column selection can become very long.
-  - Also if you format it like this you can easily comment out certain columns with double dash.
+2. **`Identify the Primary keys.`**
+   - Identify the PK of each table.
+3. **`Establish Table Relationships.`**
+   - There are theee types of relational database table relationships:
+     - 1. **One-To-One**
+       - One record in a table is associated with only one record in another table.
+       - The least common type of table relationship.
+     - 2. **One-To-Many**
+       - Each record in a table is associated with multiple records in another table.
+     - 3. **Many-To-Many**
+       - Multiple records in one table are associated with multiple records in another table.
+       - Usually we would create a third table for this relationship called a **`join table`**
+4. **`Apply Normalization Rules.`**
+   - **`Normalization`** : Process of optimizing the database structure so that redundancy and confusion are eliminated.
+   - Rules are called 'normal forms'
+     - 1. First normal form.
+       - Eliminate repeating groups in tables.
+       - Create sep. table for each set of related data.
+       - ID each set of related data with a primary key.
+     - 2. Second normal form.
+       - Create sep. tables for sets of values that apply to multiple records.
+       - Related these tables with a foreign key.
+     - 3. Third normal form.
+       - Eliminate fields that do not depend on the table's key.
+     - 4. Boyce-Codd normal form.
+     - 5. Fifth normal form.
+   - The first three are widely used in practice and the fourth/fifth less so.
 
 ---
 
-## **USING WHERE**
+## **Transactions**
