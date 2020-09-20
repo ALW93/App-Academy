@@ -157,3 +157,96 @@ COMMIT;
 ```
 
 ---
+
+## **Subqueries and JOINs**
+
+**Joins vs. Subqueries**
+**What is a JOIN?**
+
+- JOIN allows us to retrieve rows from multiple tables.
+  ![inner](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-SQL/assets/inner-join-venn-diagram.png)
+
+```sql
+SELECT * FROM puppies
+INNER JOIN breeds ON (puppies.breed_id = breeds.id);
+```
+
+- There are a few different types of JOIN operations:
+  - **`Inner Join`** : Returns results containing rows in the left table that match rows in the right table.
+  - **`Left Join`** : Returns a set of results containing all rows from the left table with the matching rows from the right table. If there is no match, the right side will have null values.
+  - **`Right Join`** : Returns a set of results containing all rows from the right table with the matching rows from the left table. If there is no match, the left side will have null values.
+  - **`Full Outer Join`** : Returns a set of results containing all rows from both the left and right tables, with matching rows from both sides where avail. If there is no match the missing side contains null values.
+  - **`Self-Join`** : Query in which a table is joined to itslef, useful for comparing values in a column of rows within the same table.
+
+**What is a subquery?**
+
+- A SELECT statement nested inside another SELECT statement.
+
+```
+postgres=# SELECT * FROM puppies;
+ id |   name   | age_yrs | breed_id | weight_lbs | microchipped
+----+----------+---------+----------+------------+--------------
+  1 | Cooper   |     1.0 |        8 |         18 | t
+  2 | Indie    |     0.5 |        9 |         13 | t
+  3 | Kota     |     0.7 |        1 |         26 | f
+  4 | Zoe      |     0.8 |        6 |         32 | t
+  5 | Charley  |     1.5 |        2 |         25 | f
+  6 | Ladybird |     0.6 |        7 |         20 | t
+  7 | Callie   |     0.9 |        4 |         16 | f
+  8 | Jaxson   |     0.4 |        3 |         19 | t
+  9 | Leinni   |     1.0 |        8 |         25 | t
+ 10 | Max      |     1.6 |        5 |         65 | f
+(10 rows)
+```
+
+```sql
+SELECT
+  puppies.name,
+  age_yrs,
+  breeds.name
+FROM
+  puppies
+INNER JOIN
+  breeds ON (breeds.id = puppies.breed_id)
+WHERE
+  age_yrs > (
+    SELECT
+      AVG (age_yrs)
+    FROM
+      puppies
+  );
+```
+
+**Multiple-row subquery**
+
+```sql
+SELECT *
+FROM friends
+WHERE
+  puppy_id IN (
+    SELECT puppy_id
+    FROM puppies
+    WHERE
+      age_yrs < 0.6
+  );
+```
+
+- We can also use a JOIN operation instead of the WHERE clause like in the above example.
+
+```sql
+SELECT *
+FROM friends
+INNER JOIN puppies ON (puppies.puppy_id = friends.puppy_id)
+WHERE
+  puppies.age_yrs < 0.6;
+```
+
+**Should I use a JOIN or a subquery?**
+
+- Joins are better when you want to combine rows from one or more tables based on a match condition.
+
+- Subqueries work great when you're only returning a single value.
+
+- When returning multiple rows, you could go with either subQ's or joins.
+
+---
