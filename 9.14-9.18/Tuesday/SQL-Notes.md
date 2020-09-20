@@ -143,3 +143,74 @@ SELECT name, breed, weight_lbs FROM puppies
 ---
 
 ## **Using INSERT**
+
+- Used to add data into a table.
+
+```sql
+INSERT INTO table_name
+VALUES
+  (column1_value, colum2_value, column3_value);
+
+INSERT INTO friends (first_name, last_name)
+VALUES
+('Rose', 'Tyler'),
+('Martha', 'Jones'),
+('Donna', 'Noble'),
+('River', 'Song');
+```
+
+- Note the use of single quotation marks for string values.
+- DEFAULT can be used in lieu of our SERIAL pseudo type.
+- You can do multiple insert by first specifying the column names and the adding in the data wrapped in parenthesis seperated by a comma.
+
+## **Using INNER JOIN**
+
+- Relationships are key in RD's.
+- We create table associations through _foreign keys_ and _primary keys_.
+
+```sql
+SELECT * FROM puppies
+INNER JOIN breeds ON (puppies.breed_id = breeds.id);
+```
+
+---
+
+## **Using Seed Files**
+
+**Writing And Running A Seed File In PSQL**
+
+- Seeding is the act of populating a database with data.
+
+**Creating a seed file**
+
+- Start by making a seed file in your IDE with `.sql` file type.
+
+```sql
+CREATE TABLE pies (
+  flavor VARCHAR(255) PRIMARY KEY,
+  price FLOAT
+);
+
+INSERT INTO pies VALUES('Apple', 19.95);
+INSERT INTO pies VALUES('Caramel Apple Crumble', 20.53);
+INSERT INTO pies VALUES('Blueberry', 19.31);
+INSERT INTO pies VALUES('Blackberry', 22.86);
+INSERT INTO pies VALUES('Cherry', 22.32);
+INSERT INTO pies VALUES('Peach', 20.45);
+INSERT INTO pies VALUES('Raspberry', 20.99);
+INSERT INTO pies VALUES('Mixed Berry', 21.45);
+```
+
+**Populating a database via < (“left caret”)**
+
+- Syntax :
+  `psql -d [database] < [path_to_file/file.sql]`
+  `psql -d bakery < path_to_my_file/seed-data.sql`
+
+**Populating the database via | (“pipe”)**
+
+- Syntax :
+  `cat [path_to_file/file.sql] | psql -d [database]`
+  `cat path_to_my_file/seed-data.sql | psql -d postgres`
+
+---
