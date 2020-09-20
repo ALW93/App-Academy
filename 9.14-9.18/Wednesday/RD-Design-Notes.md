@@ -305,3 +305,67 @@ WHERE t1.unique1 < 100 AND t1.unique2 = t2.unique2;
 ```
 
 ---
+
+## **Accessing Data from Node.js**
+
+**Node-Postgres And Prepared Statements**
+
+- The **node-postgres** library is the library used for node apps to connect to postgres applications.
+
+**Connecting**
+
+- Use a POOL of client objects to connect to the database.
+  ![pool](https://i.gyazo.com/fdf1e1dca599f64d1b78315e3344a865.png)
+
+```js
+const { Pool } = require("pg");
+
+const pool = new Pool({
+  user: "application_user",
+  password: "iy7qTEcZ",
+});
+
+const results = await pool.query(`
+  SELECT id, name, age_yrs
+  FROM puppies;
+`);
+
+console.log(results);
+```
+
+**Prepared Statement**
+
+- Prepared Statements are SQL statements that parameters in them that you can substitute values.
+
+```js
+in inside an array.
+
+await pool.query(`
+  INSERT INTO puppies (name, age_yrs, breed, weight_lbs, microchipped)
+  VALUES ($1, $2, $3, $4, $5);
+`, [name, age, breedName, weight, isMicrochipped]);
+```
+
+```js
+const { Pool } = require("pg");
+
+const allPuppiesSql = `
+  SELECT id, name, age_yrs, breed, weight_lbs, microchipped
+  FROM puppies;
+`;
+
+const pool = new Pool({
+  database: "«database name»",
+});
+
+async function selectAllPuppies() {
+  const results = await pool.query(allPuppiesSql);
+  console.log(results.rows);
+  pool.end();
+}
+
+const id = Number.parseInt(process.argv[2]);
+selectOnePuppy(id);
+```
+
+---
