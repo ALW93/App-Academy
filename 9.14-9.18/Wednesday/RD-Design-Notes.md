@@ -250,3 +250,58 @@ WHERE
 - When returning multiple rows, you could go with either subQ's or joins.
 
 ---
+
+## **Indexes and Performance Analysis**
+
+- **`PostgreSQL Index`** : Works similarly like an index in the back of a book, they provide special lookup tables to let us make faster database queries.
+
+- The Syntax for creating index is as follows:
+
+```sql
+CREATE INDEX index_name ON table_name (column_name);
+
+CREATE INDEX addresses_phone_index ON addresses (phone_number);
+
+DROP INDEX addresses_phone_index;
+```
+
+**Types of indexes**
+
+There are several types of indexes use in Postgres: B-tree, Hash, GiST, and GIN.
+
+- **`Single-Column Indexes`** Uses only one table column.
+  - `CREATE INDEX addresses_phone_index ON addresses (phone_number);`
+- **`Multiple-Column Indexes`** Uses more than one table column.
+  - `CREATE INDEX idx_addresses_city_post_code ON table_name (city_id, postal_code);`
+- **`Partial Indexes`** Uses subset of a table defined by a conditional expression.
+  - `CREATE INDEX addresses_phone_index ON addresses (phone_number) WHERE (city_id = 2);`
+
+**When to use an index**
+
+- Overall DB indexes are known to enhance performance when performing queries, however there are certain situations where it is not recommended:
+
+  - When working with small tables.
+  - When table has large batch updates or insert operations.
+  - When working with columns that have many NULL values.
+  - When working with columns that are frequently manipulated.
+
+- Using EXPLAIN and ANALYZE keywords can give us performance data of our queries.
+
+```js
+EXPLAIN ANALYZE SELECT *
+FROM tenk1 t1, tenk2 t2
+WHERE t1.unique1 < 100 AND t1.unique2 = t2.unique2;
+
+                                                            QUERY PLAN
+----------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=2.37..553.11 rows=106 width=488) (actual time=1.392..12.700 rows=100 loops=1)
+   ->  Bitmap Heap Scan on tenk1 t1  (cost=2.37..232.35 rows=106 width=244) (actual time=0.878..2.367 rows=100 loops=1)
+         Recheck Cond: (unique1 < 100)
+         ->  Bitmap Index Scan on tenk1_unique1  (cost=0.00..2.37 rows=106 width=0) (actual time=0.546..0.546 rows=100 loops=1)
+               Index Cond: (unique1 < 100)
+   ->  Index Scan using tenk2_unique2 on tenk2 t2  (cost=0.00..3.01 rows=1 width=244) (actual time=0.067..0.078 rows=1 loops=100)
+         Index Cond: (unique2 = t1.unique2)
+ Total runtime: 14.452 ms
+```
+
+---
