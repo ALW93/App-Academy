@@ -313,3 +313,131 @@ module.exports = {
 - IMPORTANT: Never rolleback migrations that have been run on a production server.
 
 ---
+
+## **CRUD Operations with Sequelize**
+
+- There are four general ways to interact with a database: Creating Data, Reading Data, Updating Data, and Destroying Data.
+
+**Creating A New Record**
+
+```js
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  // Constructs an instance of the JavaScript `Cat` class. **Does not
+  // save anything to the database yet**. Attributes are passed in as a
+  // POJO.
+  const cat = Cat.build({
+    firstName: "Markov",
+    specialSkill: "sleeping",
+    age: 5,
+  });
+
+  // This actually creates a new `Cats` record in the database. We must
+  // wait for this asynchronous operation to succeed.
+  await cat.save();
+
+  console.log(cat.toJSON());
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- To create a new record in one step you can also use the create() method.
+
+```js
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  const cat = await Cat.create({
+    firstName: "Curie",
+    specialSkill: "jumping",
+    age: 4,
+  });
+
+  console.log(cat.toJSON());
+
+  await sequelize.close();
+}
+
+main();
+```
+
+**Reading A Record By Primary Key**
+
+```js
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  // Fetch the cat with id #1.
+  const cat = await Cat.findByPk(1);
+  console.log(cat.toJSON());
+
+  await sequelize.close();
+}
+
+main();
+```
+
+**Updating A Record**
+
+```js
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  const cat = await Cat.findByPk(1);
+
+  console.log("Old Markov: ");
+  console.log(cat.toJSON());
+
+  // The Cat object is modified, but the corresponding record in the
+  // database is *not* yet changed at all.
+  cat.specialSkill = "super deep sleeping";
+  // Only by calling `save` will the data be saved.
+  await cat.save();
+
+  console.log("New Markov: ");
+  console.log(cat.toJSON());
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- You must call the save() method if you actually want to change any data.
+
+**Destroying A Record**
+
+```js
+const process = require("process");
+
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  const cat = await Cat.findByPk(1);
+  // Remove the Markov record.
+  await cat.destroy();
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- We can also destroy a record in one step like so:
+
+```js
+async function main() {
+  // Destroy the Cat record with id #3.
+  await Cat.destroy({ where: { id: 3 } });
+
+  await sequelize.close();
+}
+
+main();
+```
+
+---
