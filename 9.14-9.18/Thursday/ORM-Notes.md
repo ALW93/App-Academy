@@ -203,3 +203,113 @@ main();
 ---
 
 ## **Database Migrations**
+
+**Using Database Migrations**
+
+- **`Migration`** : File that includes code to create, modify, or drop SQL tables.
+
+**Sequelize Migration Files**
+
+- As a recap, to generate a Cat Model file we can use:
+- `npx sequelize model:generate --name Cat --attributes "firstName:string,specialSkill:string"`
+- This is how the auto-generated Migration File will look like:
+
+```js
+// ./migrations/20200203211508-create-cat.js
+
+"use strict";
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable("Cats", {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
+      firstName: {
+        type: Sequelize.STRING,
+      },
+      specialSkill: {
+        type: Sequelize.STRING,
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+    });
+  },
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable("Cats");
+  },
+};
+```
+
+- Two Functions will be exported: `up` and `down`.
+- `UP`: Tells Sequelize how to create our Cat's Table.
+- `DOWN`: Tells Sequelize how to 'undo' our up function, or helps us drop the Cats table.
+
+**Running A Migration**
+
+- Now that our migration code is set after using model:generate we need to run it to actually create our table, we can do so using:
+  `npx sequelize db:migrate`
+- It will create something like this:
+
+```
+catsdb=> \d "Cats";
+                                         Table "public.Cats"
+    Column    |           Type           | Collation | Nullable
+--------------+--------------------------+-----------+----------
+ id           | integer                  |           | not null
+ firstName    | character varying(255)   |           |
+ specialSkill | character varying(255)   |           |
+ createdAt    | timestamp with time zone |           | not null
+ updatedAt    | timestamp with time zone |           | not null
+Indexes:
+    "Cats_pkey" PRIMARY KEY, btree (id)
+```
+
+**Rolling Back A Migration**
+
+- Sometimes we may make a mistake in our migration file, to fix this we can undo the migration, make the necessary changes, and then re-run db:migrate.
+  `npx sequelize db:migrate:undo`
+- When we run this command we are using the 'down' function in our migration page.
+
+* up And down are Asynchronous
+
+**Writing A down Method**
+
+```js
+module.exports = {
+  // ...
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable("Cats");
+  },
+};
+
+// OR, async/await way:
+module.exports = {
+  // ...
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable("Cats");
+  },
+};
+```
+
+- If we left the down method empty, then when we use rollback on a table nothing would happen!
+- NEVER manually drop a table on a production database.
+
+**Advantages Of Migrations**
+
+- Written in JS, which may be simpler than writing purely in SQL.
+- Migration files that sore SQL schema code change permanently.
+- Easier for collaboraters to clone your code.
+- Easier to rolleback database changes to fix bugs.
+
+- IMPORTANT: Never rolleback migrations that have been run on a production server.
+
+---
