@@ -685,3 +685,238 @@ main();
 ---
 
 ## **Validations With Sequelize**
+
+- **Validation** is code JS code that makes sure that data is valid.
+
+**Validating That An Attribute Is Not NULL**
+
+- On our model files:
+
+```js
+// ./models/cat.js
+"use strict";
+module.exports = (sequelize, DataTypes) => {
+  const Cat = sequelize.define(
+    "Cat",
+    {
+      firstName: DataTypes.STRING,
+      specialSkill: DataTypes.STRING,
+      age: DataTypes.INTEGER,
+    },
+    {}
+  );
+  Cat.associate = function (models) {
+    // associations can be defined here
+  };
+  return Cat;
+};
+```
+
+- To ensure that none of these parameters pass us null for our data rows we can edit it to look like this:
+
+```js
+// ./models/cat.js
+"use strict";
+module.exports = (sequelize, DataTypes) => {
+  const Cat = sequelize.define(
+    "Cat",
+    {
+      firstName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "firstName must not be null",
+          },
+        },
+      },
+      specialSkill: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "specialSkill must not be null",
+          },
+        },
+      },
+      age: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "age must not be null",
+          },
+        },
+      },
+    },
+    {}
+  );
+  Cat.associate = function (models) {
+    // associations can be defined here
+  };
+  return Cat;
+};
+```
+
+**The notEmpty Validation**
+
+- Because setting a name to an empty string would avoid the null output, we can also add a validation to prevent empty strings.
+
+```js
+// ./models/cat.js
+"use strict";
+module.exports = (sequelize, DataTypes) => {
+  const Cat = sequelize.define(
+    "Cat",
+    {
+      firstName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "firstName must not be null",
+          },
+          notEmpty: {
+            msg: "firstName must not be empty",
+          },
+        },
+      },
+      specialSkill: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "specialSkill must not be null",
+          },
+          notEmpty: {
+            msg: "specialSkill must not be empty",
+          },
+        },
+      },
+      // ...
+    },
+    {}
+  );
+  Cat.associate = function (models) {
+    // associations can be defined here
+  };
+  return Cat;
+};
+```
+
+**Forbidding Long String Values**
+
+- We can also use 'len' to create a character limit validation.
+
+```js
+// ./models/cat.js
+"use strict";
+module.exports = (sequelize, DataTypes) => {
+  const Cat = sequelize.define(
+    "Cat",
+    {
+      firstName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "firstName must not be null",
+          },
+          notEmpty: {
+            msg: "firstName must not be empty",
+          },
+          len: {
+            args: [0, 8],
+            msg: "firstName must not be more than eight letters long",
+          },
+        },
+      },
+      // ...
+    },
+    {}
+  );
+  Cat.associate = function (models) {
+    // associations can be defined here
+  };
+  return Cat;
+};
+```
+
+**Validating That A Numeric Value Is Within A Specified Range**
+
+- We can also pass in validations to check a max and min to specify a range.
+
+```js
+// ./models/cat.js
+"use strict";
+module.exports = (sequelize, DataTypes) => {
+  const Cat = sequelize.define(
+    "Cat",
+    {
+      // ...
+      age: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "age must not be null",
+          },
+          min: {
+            args: [0],
+            msg: "age must not be less than zero",
+          },
+          max: {
+            args: [99],
+            msg: "age must not be greater than 99",
+          },
+        },
+      },
+    },
+    {}
+  );
+  Cat.associate = function (models) {
+    // associations can be defined here
+  };
+  return Cat;
+};
+```
+
+**Validating That An Attribute Is Among A Finite Set Of Values**
+
+- We can use isIn validation to verify that an input value is included in a pre-defined data array.
+
+```js
+// ./models/cat.js
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Cat = sequelize.define('Cat', {
+    // ...
+    specialSkill: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "specialSkill must not be null",
+        },
+        notEmpty: {
+          msg: "specialSkill must not be empty",
+        },
+        isIn: {
+          args: [["jumping", "sleeping", "purring"]],
+          msg: "specialSkill must be either jumping, sleeping, or purring",
+        },
+      },
+    },
+    // ...
+  }, {});
+  Cat.associate = function(models) {
+    // associations can be defined here
+  };
+  return Cat;
+```
+
+- Note that the array is doubly nested because want to pass in one argument.
+
+---
+
+## **Transactions With Sequelize**
