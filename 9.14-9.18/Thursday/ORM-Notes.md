@@ -441,3 +441,247 @@ main();
 ```
 
 ---
+
+## **Querying Using Sequelize**
+
+**Basic Usage Of findAll To Retrieve Multiple Records**
+
+```js
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  // `findAll` asks to retrieve _ALL_ THE CATS!!  An array of `Cat`
+  // objects will be returned.
+  const cats = await Cat.findAll();
+
+  // Log the fetched cats.
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- The third argument we're passing in '2' will print the result with nice spacing, null is passed into skipt the second arg.
+
+- Since we typically don't want to fetch every single record, we can issue a WHERE clause to do this.
+
+```js
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  // Fetch all cats named Markov.
+  const cats = await Cat.findAll({
+    where: {
+      firstName: "Markov",
+    },
+  });
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- Retrieves all cat who's name is 'Markov'
+
+```js
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  // Fetch all cats named either Markov or Curie.
+  const cats = await Cat.findAll({
+    where: {
+      firstName: ["Markov", "Curie"],
+    },
+  });
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- Retrieves all cats who's name is either Markov or Curie
+
+**Using findAll To Find Objects Not Matching A Criterion**
+
+```js
+const { Op } = require("sequelize");
+const { sequelize, Cat } = require("./db/models");
+
+async function main() {
+  const cats = await Cat.findAll({
+    where: {
+      firstName: {
+        // Op.ne means the "not equal" operator.
+        [Op.ne]: "Markov",
+      },
+    },
+  });
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- Using the [Op.ne] property helps filter out 'ne' or not equal. Op has many other methods, refer to the documentation.
+- The bracket performs key interpolation.
+
+**Combining Criteria with Op.and**
+
+```js
+const { Op } = require("sequelize");
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  // fetch cats with name != Markov AND age = 4.
+  const cats = await Cat.findAll({
+    where: {
+      firstName: {
+        [Op.ne]: "Markov",
+      },
+      age: 4,
+    },
+  });
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- Alt way
+
+```js
+const { Op } = require("sequelize");
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  const cats = await db.Cat.findAll({
+    where: {
+      [Op.and]: [{ firstName: { [Op.ne]: "Markov" } }, { age: 4 }],
+    },
+  });
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- The first query was an OR operation, since it mapped a column to an array of values.
+- This one is an AND operation since it's passing two requirements.
+
+**Combining Criteria with Op.or**
+
+```js
+const { Op } = require("sequelize");
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  // fetch cats with name == Markov OR age = 4.
+  const cats = await Cat.findAll({
+    where: {
+      [Op.or]: [{ firstName: "Markov" }, { age: 4 }],
+    },
+  });
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+**Querying With Comparisons**
+
+```js
+const { Op } = require("sequelize");
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  // Fetch all cats whose age is > 4.
+  const cats = await Cat.findAll({
+    where: {
+      age: { [Op.gt]: 4 },
+    },
+  });
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- 'gt' greater than | 'lt' less than.
+
+**Ordering Results**
+
+```js
+const { sequelize, Cat } db = require("./models");
+
+async function main() {
+  const cats = await Cat.findAll({
+    order: [["age", "DESC"]],
+  });
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- We can specify sort-order with a doubly-nested array.
+
+**Limiting Results and findOne**
+
+```js
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  const cats = await Cat.findAll({
+    order: [["age", "DESC"]],
+    limit: 1,
+  });
+  console.log(JSON.stringify(cats, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- Limiting 1 result on a decremented result query will provide you with the oldest cat in this particular query.
+
+- Since findAll returns an array and we're just looking for one value, using findOne() may be a more suitable method than findAll()
+
+```js
+const { sequelize, Cat } = require("./models");
+
+async function main() {
+  const cat = await Cat.findOne({
+    order: [["age", "DESC"]],
+  });
+  console.log(JSON.stringify(cat, null, 2));
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- In the case there is no record matching our call with findOne, we will get 'null' returned as a result.
+
+---
+
+## **Validations With Sequelize**
