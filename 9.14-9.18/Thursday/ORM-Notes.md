@@ -920,3 +920,148 @@ module.exports = (sequelize, DataTypes) => {
 ---
 
 ## **Transactions With Sequelize**
+
+**The Problem: Database Updates Can Fail**
+Database updates can fail for a large number of reasons:
+
+1. Command get's sent but the DB has been shut down by the database administrator.
+2. Bug in the database cases the system to crash.
+3. Power loss to the machine powering the DB.
+4. Internet connection disruption.
+5. Update asks the database to violate a pre-defined constraint.
+
+**The Solution: Database Transactions**
+**The BankAccounts Schema**
+
+```js
+// ./models/bank_account.js
+"use strict";
+module.exports = (sequelize, DataTypes) => {
+  // Define BankAccount model.
+  const BankAccount = sequelize.define(
+    "BankAccount",
+    {
+      // Define clientName attribute.
+      clientName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        // Define validations on clientName.
+        validate: {
+          // clientName must not be null.
+          notNull: {
+            msg: "clientName must not be NULL",
+          },
+          // clientName must not be empty.
+          notEmpty: {
+            msg: "clientName must not be empty",
+          },
+        },
+      },
+
+      // Define balance attribute.
+      balance: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        // Define validations on balance.
+        validate: {
+          // balance must not be less than zero.
+          min: {
+            args: [0],
+            msg: "balance must not be less than zero",
+          },
+        },
+      },
+    },
+    {}
+  );
+
+  return BankAccount;
+};
+```
+
+**Example: An Update Fails Because Of Validation Failure**
+
+```js
+// ./index.js
+const { sequelize, BankAccount } = require("./models");
+
+// This code will try to transfer $7,500 from Markov to Curie.
+async function main() {
+  // Fetch Markov and Curie's accounts.
+  const markovAccount = await BankAccount.findByPk(1);
+  const curieAccount = await BankAccount.findByPk(2);
+
+  try {
+    // Increment Curie's balance by $7,500.
+    curieAccount.balance += 7500;
+    await curieAccount.save();
+
+    // Decrement Markov's balance by $7,500.
+    markovAccount.balance -= 7500;
+    await markovAccount.save();
+  } catch (err) {
+    // Report if anything goes wrong.
+    console.log("Error!");
+
+    for (const e of err.errors) {
+      console.log(`${e.instance.clientName}: ${e.message}`);
+    }
+  }
+
+  await sequelize.close();
+}
+
+main();
+```
+
+- This will fail because the validation we stt for the balance to never be less than zero.
+
+**Incorrect Solutions**
+
+- For our code to be resilient to unavoidable failures, there is no other choice but to use a database transaction.
+
+**Using A Database Transaction With Sequelize**
+
+```js
+// ./index.js
+const { sequelize, BankAccount } = require("./models");
+
+async function main() {
+  // Fetch Markov and Curie's accounts.
+  const markovAccount = await BankAccount.findByPk(1);
+  const curieAccount = await BankAccount.findByPk(2);
+
+  try {
+    await sequelize.transaction(async (tx) => {
+      // Increment Curie's balance by $7,500.
+      curieAccount.balance += 7500;
+      await curieAccount.save({ transaction: tx });
+
+      // Decrement Markov's balance by $7,500.
+      markovAccount.balance -= 7500;
+      await markovAccount.save({ transaction: tx });
+    });
+  } catch (err) {
+    // Report if anything goes wrong.
+    console.log("Error!");
+
+    for (const e of err.errors) {
+      console.log(`${e.instance.clientName}: ${e.message}`);
+    }
+  }
+
+  await sequelize.close();
+}
+
+main();
+```
+
+**Aside: What Is The Transaction Object?**
+
+- TX is just a unique generated ID to pair with our transaction.
+
+**Transactions Prevent Race Conditions**
+
+- Sometimes race conditions happen, for example if our program races between reading the account balances and also updating those balances, we create a race condition.
+
+---
