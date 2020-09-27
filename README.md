@@ -2,29 +2,29 @@
 
 ## **Current Week** (8.31 - 9.4)
 
-### **Monday** (RDBMS and Database Entities)
+### **Monday** (Node HTTP Servers)
 
-> | Creating DB Entities | DB Lingo | Installing SQL | DB Management | Table Management |
+> | Regex | Node HTTP |
 
-- [Notes](9.14-9.18/Monday/Database-Notes.md)
+- [Notes](9.21-9.25/Monday/Node-HTTP-Notes.md)
 
-### **Tuesday** (SQL)
+### **Tuesday** (Express)
 
-> | Inserting DATA | Updating DATA | Deleting DATA | Selecting Simple Data | Joining Tables |
+> | Express | Pug |
 
-- [Notes](9.14-9.18/Tuesday/SQL-Notes.md)
+- [Notes](9.21-9.25/Tuesday/Express.md)
 
-### **Wedneday** (SQL Continued)
+### **Wednesday** (Form Handling)
 
-> | Relational DB Design | Transactions | Subqueries | EXPLAIN |
+> | HTML Form |
 
-- [Notes](9.14-9.18/Wednesday/RD-Design-Notes.md)
+- [Notes](9.21-9.25/Wednesday/Form-Handling.md)
 
-### **Thursday** (Sequelize ORM)
+### **Thursday** (Data-Driven App)
 
-> | Installing Sequelize | DB Migrations | CRUD Ops | Querying with Sequelize | Validations with Sequelize | Transactions with Sequelize |
+> | Full-Stack | Environment | Async Router Handlers | Handling Errors |
 
-- [Notes](9.14-9.18/Thursday/ORM-Notes.md)
+- [Notes](9.21-9.25/Thursday/FS.md)
 
 ### **Misc Resources**
 
@@ -47,3 +47,5 @@
 [Week Eight Folder](https://github.com/ALW93/App-Academy/tree/master/8.31-9.4)
 
 [Week Nine Folder](https://github.com/ALW93/App-Academy/tree/master/9.8-9.11)
+
+[Week Ten Folder](https://github.com/ALW93/App-Academy/tree/master/9.14-9.18)
