@@ -1,30 +1,6 @@
 # **Directory**
 
-## **Current Week** (8.31 - 9.4)
-
-### **Monday** (Node HTTP Servers)
-
-> | Regex | Node HTTP |
-
-- [Notes](9.21-9.25/Monday/Node-HTTP-Notes.md)
-
-### **Tuesday** (Express)
-
-> | Express | Pug |
-
-- [Notes](9.21-9.25/Tuesday/Express.md)
-
-### **Wednesday** (Form Handling)
-
-> | HTML Form |
-
-- [Notes](9.21-9.25/Wednesday/Form-Handling.md)
-
-### **Thursday** (Data-Driven App)
-
-> | Full-Stack | Environment | Async Router Handlers | Handling Errors |
-
-- [Notes](9.21-9.25/Thursday/FS.md)
+None this week, sorry! Too Busy! Will upload later on when I revisit!
 
 ### **Misc Resources**
 
