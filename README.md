@@ -1,6 +1,16 @@
 # **Directory**
 
-None this week, sorry! Too Busy! Will upload later on when I revisit!
+## **Tuesday** (Authentication)
+
+[Notes](9.28-10.1/Authentication-SecurePasswordHashing-Tuesday.md)
+
+## **Wednesday** (API)
+
+[Notes](9.28-10.1/RESTful-Api-Wednesday.md)
+
+## **Thursday** (API Security)
+
+[Notes](9.28-10.1/OAuth-JWT-Thursday.md)
 
 ### **Misc Resources**
 
