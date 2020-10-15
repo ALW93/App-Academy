@@ -124,3 +124,5 @@ bcrypt.compareSync("not_bacon", hash); // false
 ```
 
 ---
+
+

@@ -1,16 +1,20 @@
 # **Directory**
 
+## **Monday** (React Overview & ES6 Review)
+
+[Notes](10.12-10.16/ReactConcept-Monday.md)
+
 ## **Tuesday** (Authentication)
 
-[Notes](9.28-10.1/Authentication-SecurePasswordHashing-Tuesday.md)
+[Notes](10.12-10.16/ReactIntroComponents-Tuesday.md)
 
 ## **Wednesday** (API)
 
-[Notes](9.28-10.1/RESTful-Api-Wednesday.md)
+[Notes]
 
 ## **Thursday** (API Security)
 
-[Notes](9.28-10.1/OAuth-JWT-Thursday.md)
+[Notes]
 
 ### **Misc Resources**
 
@@ -35,3 +39,9 @@
 [Week Nine Folder](https://github.com/ALW93/App-Academy/tree/master/9.8-9.11)
 
 [Week Ten Folder](https://github.com/ALW93/App-Academy/tree/master/9.14-9.18)
+
+---
+
+## Week 11 - Week 13
+
+---
