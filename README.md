@@ -4,7 +4,7 @@
 
 [Notes](10.12-10.16/ReactConcept-Monday.md)
 
-## **Tuesday** (Authentication)
+## **Tuesday** (Introduction to JSX)
 
 [Notes](10.12-10.16/ReactIntroComponents-Tuesday.md)
 

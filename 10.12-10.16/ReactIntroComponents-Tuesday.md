@@ -359,3 +359,55 @@ function App() {
 - Just remember if you decided to use the return keyword in a function to 'return some JSX', then make sure you wrap the JSX in parenthesis.
 
 ---
+
+`npx create-react-app my-app`
+
+- Single line used to initiate a React application.
+- React has a great toolchain where you can see changes live as you're editing your application.
+- React errors will be rendered directly onto the browser window.
+- A downside is that it installs a lot of bloat files.
+- Examples of React create Element and JSX equivalent
+
+```js
+React.createElement(
+  "a",
+  {
+    className: "active",
+    href: "https://appacademy.io",
+  },
+  "App Academy"
+);
+// JSX Version
+<a className="active" href="https://appacademy.io">
+  App Academy
+</a>;
+```
+
+```js
+React.createElement(
+  OwnerDetails,
+  {
+    owner: props.data.owner,
+    number: props.index + 1,
+  },
+  props.name
+);
+// JSX Version
+<OwnerDetails owner={props.data.owner} number={props.index + 1}>
+  {props.name}
+</OwnerDetails>;
+```
+
+**More Complex JSX Example**
+
+```js
+const BookPanel = (props) => {
+  <section className="book" id={`book-${props.id}`}>
+    <h1 className="book__title">{props.title}</h1>
+    <img src={props.coverUrl} />
+    <div className="book__desc">{props.description}</div>
+  </section>;
+};
+```
+
+---
