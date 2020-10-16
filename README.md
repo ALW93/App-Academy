@@ -8,15 +8,17 @@
 
 [Notes](10.12-10.16/ReactIntroComponents-Tuesday.md)
 
-## **Wednesday** (API)
+## **Wednesday** (React State & Class Components)
+
+[Notes](10.12-10.16/ReactState-Wednesday.md)
+
+## **Thursday** (React Router and Navigation)
 
 [Notes]
 
-## **Thursday** (API Security)
+## **Friday** (Context)
 
 [Notes]
-
-### **Misc Resources**
 
 ## **Previous Weeks**
 
