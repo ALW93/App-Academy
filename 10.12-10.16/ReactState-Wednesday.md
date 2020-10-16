@@ -397,3 +397,191 @@ RandomQuote.defaultProps = {
 ---
 
 ## **Handling Events**
+
+- To add an event listener to an element, just define a method to handle the event and associate that method with the element event you are listening for.
+  **Example**
+
+```js
+import React from "react";
+
+class AlertButton extends React.Component {
+  showAlert = () => {
+    window.alert("Button Clicked!");
+  };
+
+  render() {
+    return (
+      <button type="button" onClick={this.showAlert}>
+        Submit
+      </button>
+    );
+  }
+}
+```
+
+- Note that when refering the handler method in onClick we're not invoking showAlert simply just passing a reference.
+
+**Preventing default behavior**
+
+- HTML Elements in the browser often have a lot of default behavior.
+
+  - I.E. Clicking on an `<a>` element navigates so a resource denoted by `<href>` property.
+
+- Here is an example of where using `e.preventDefault()` could come in handy.
+
+```js
+import React from "react";
+
+class NoDefaultSubmitForm extends React.Component {
+  submitForm = (e) => {
+    e.preventDefault();
+    window.alert("Handling form submission...");
+  };
+
+  render() {
+    return (
+    <form onSubmit={this.submitForm}>
+      <button>Submit</button>
+    </form>;
+    )}
+}
+```
+
+- The button contained within the form will end up refreshing the page before `this.submitForm` method can be completed.
+- We can stick an `e.preventDefault()` into the actual method to get around this problem.
+- **`e`** : Parameter that references a **`Synthetic Event`** object type.
+
+**Using `this` in event handlers**
+
+```js
+// ./src/AlertButton.js
+
+import React from "react";
+
+class AlertButton extends React.Component {
+  showAlert = () => {
+    window.alert("Button clicked!");
+    console.log(this);
+  };
+
+  render() {
+    return (
+      <button type="button" onClick={this.showAlert}>
+        Click Me
+      </button>
+    );
+  }
+}
+
+export default AlertButton;
+```
+
+- When we console log `this` we see the AlertButton object.
+- If we were to write the showAlert method with a regular class method like:
+
+```js
+showAlert() {
+  console.log(this);
+}
+```
+
+- We would get `undefined` => remember that fat arrow binds to the current context!
+
+**Reviewing class methods and the `this` keyword**
+
+- Let's refresh on binding.
+
+```js
+class Boyfriend {
+  constructor() {
+    this.name = "Momato Riruru";
+  }
+
+  displayName() {
+    console.log(this.name);
+  }
+}
+
+const Ming = new Boyfriend();
+Ming.displayName(); // => Momato Riruru
+
+const displayAgain = Ming.displayName;
+displayAgain(); // => Result in a Type Error: Cannot read property 'name' of undefined.
+```
+
+- The first time we use our `displayMethod` call, it is called directly on the instance of the boyfriend class, which is why `Momato Riruru` was printed out.
+
+- The second time it was called, the ref of the method is stored as a variable and method is called on that variable instead of the instance; resulting in a type error (it has lost it's context)
+
+- Remember we can use the **`bind`** method to rebind context!
+
+  - We can refactor to get the second call working like this:
+
+  ```js
+  const displayAgain = Ming.displayName.bind(Ming);
+  displayAgain(); // => Now Momato Riruru will be printed out.
+  ```
+
+- To continue using function declarations vs fat arrow we can assign context in a constructor within a class component.
+
+```js
+import React from "react";
+
+class AlertButton extends React.Component {
+  constructor() {
+    super();
+    this.showAlert = this.showAlert.bind(this); // binding context
+  }
+
+  showAlert() {
+    console.log(this);
+  }
+
+  render() {
+    return (
+      <button type="button" onClick={this.showAlert}>
+        Submit
+      </button>
+    );
+  }
+}
+
+export default AlertButton;
+```
+
+- **`Experimental Syntax`** : Syntax that has been proposed to add to ECMAScript but hasn't officially been added to the language specification yet.
+
+- It's good to pick one approach and use it consistently, either:
+  1. Class Properties & Arrow Functions
+  2. Bind Method & This Keyword
+
+**The `SyntheticEvent` object**
+
+- **Synthetic Event Objects**: Cross Browser wrappeds around the browser's native event.
+
+  - Includes the use of stopPropagation() and preventDefault();
+
+- Attributes of the Synthetic Event Object:
+  |Attributes|
+  |---|
+  | boolean bubbles |
+  |boolean cancelable|
+  | DOMEventTarget currentTarget|
+  |boolean defaultPrevented|
+  |number eventPhase|
+  |boolean isTrusted|
+  |DOMEvent nativeEvent|
+  |void preventDefault()|
+  |boolean isDefaultPrevented()|
+  |void stopPropagation()|
+  |boolean isPropagationStopped()|
+  |void persist()|
+  |DOMEventTarget target|
+  |number timeStamp|
+  |string type |
+
+- **`nativeEvent`** : property defined in a synthetic event object that gives you access to the underlying native browser event (rarely used!)
+
+---
+
+## **Forms in React**
