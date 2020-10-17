@@ -11,6 +11,7 @@
 ## **Wednesday** (React State & Class Components)
 
 [Notes](10.12-10.16/ReactState-Wednesday.md)
+[Documentation Notes](10.12-10.16/ReactDoc.md)
 
 ## **Thursday** (React Router and Navigation)
 
