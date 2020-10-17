@@ -791,4 +791,66 @@ import isEmail from "validator/es/lib/isEmail";
   }
 ```
 
+**Note About Client-side vs server-side validation**
+
+- Server-side validation is not optional.
+- Tech-savvy users can manipulate client-side validations.
+- Sometimes the 'best approach' is to skip implementing validations on the client-side and rely completely on the server-side validation.
+
+---
+
+## **Component Lifecycle**
+
+- Component Lifecycle is simply a way of describing the key moments in the lifetime of a component.
+  1. Loading (Mounting)
+  2. Updating
+  3. Unloading (Unmounting)
+
+**The lifecycle of a React component**
+
+- Each `Class Component` has several `lifecycle methods` that you can add to run code at specific times.
+
+  - `componentDidMount` : Method called after your component has been added to the component tree.
+  - `componentDidUpdate` : Method called after your component has been updated.
+  - `componentWillUnmount` : Method called just before your component is removed from the component tree.
+
+- **`Mounting`**
+
+  1. `constructor` method is called
+  2. `render` method is called
+  3. React updates the `DOM`
+  4. `componentDidMount` is called
+
+- **`Updating`**
+
+  - When component receives new `props`
+    1. `render` method is called
+    2. React updates the `DOM`
+    3. `componentDidUpdate` is called
+  - When `setState` is called
+    1. `render` method is called
+    2. React updates the `DOM`
+    3. `componentDidUpdate` is called
+
+- **`Unmounting`**
+  - The moment before a class component is removed from the component tree:
+  - `componentDidMount` will be called.
+
+**Avoiding the legacy lifecycle methods**
+
+- Occasionally you will encounter some deprecated lifecycle methods:
+
+  - UNSAFE_componentWillMount
+  - UNSAFE_componentWillReceiveProps
+  - UNSAFE_componentWillUpdate
+
+- Just know they will be removed soon from React's API, peace.
+
+**Using the class component lifecycle methods**
+
+_Exercise done in sep. directory_
+
+- Assorted Notes:
+  - Common Use for `componentDidMount` lifecycle method is for fetching data from an API.
+
 ---
