@@ -6,6 +6,8 @@
 
 `npx create-react-app my-app --template @appacademy/simple`
 
+- Keep in mind that using `create-react-app` automatically initializes a git repository for you!
+
 - App Academy custom template for creating a react app.
 - If using the default react create project you can delete the following files:
   - favicon.ico
@@ -800,6 +802,8 @@ import isEmail from "validator/es/lib/isEmail";
 ---
 
 ## **Component Lifecycle**
+
+![life](https://i.gyazo.com/2cf79a8f98c2afc7a2a13bdf123a70f4.png)
 
 - Component Lifecycle is simply a way of describing the key moments in the lifetime of a component.
   1. Loading (Mounting)

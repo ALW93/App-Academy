@@ -155,6 +155,45 @@ function ListOfTenThings() {
 
 ## **Reconciliation**
 
+**The Diffing Algorithm**
+
+- **`Diffing`** : When the state of a component changes React creates a new virtual DOM tree.
+
+- Elements of Different Types
+
+  - Every time the root elements have different types, React tears down the old tree and builds the new tree from scratch.
+
+- DOM Elements Of the Same Type
+
+  - When comparing two DOM elements of the same type, React keeps the same underlying DOM node and only updates the changes attributes.
+
+  ```js
+  <div className="before" title="stuff" />
+
+  <div className="after" title="stuff" />
+  ```
+
+  ```js
+  <div style={{ color: "red", fontWeight: "bold" }} />
+
+  <div style={{color: 'green', fontWeight: 'bold'}} />
+  ```
+
+- Component Elements Of The Same Type
+
+  - When components update, instances will remain the same, so that state maintains across renders.
+  - React will only update the props, to match the new element.
+
+- Recursing On Children
+
+  - React will iterate both lists of children and generate a mutation whenever there's a difference.
+  - This is why we use `keys`.
+    - Makes it easier for React to match children in the original tree with children in the subsequent tree.
+
+- Tradeoffs
+  - Important to remember that reconciliation algorithm is an _implementation detail_.
+  - Re-rendering only to apply the differences following the rules stated in the previous sections.
+
 ---
 
 ## **Typechecking With PropTypes**
