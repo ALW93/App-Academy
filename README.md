@@ -22,6 +22,10 @@
 
 [Notes]
 
+## **Extra**
+
+[Random Notes](10.12-10.16/MiscNotes.md)
+
 ## **Previous Weeks**
 
 [Week One Folder](https://github.com/ALW93/App-Academy/tree/master/7.13-7.17)
