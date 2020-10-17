@@ -92,7 +92,66 @@ function TodoList() {
 
 **Functions as Children**
 
----
+- `props.children` works like any other prop, meaning it can pass any sort of data.
+
+```js
+// Calls the children callback numTimes to produce a repeated component
+function Repeat(props) {
+  let items = [];
+  for (let i = 0; i < props.numTimes; i++) {
+    items.push(props.children(i));
+  }
+  return <div>{items}</div>;
+}
+
+function ListOfTenThings() {
+  return (
+    <Repeat numTimes={10}>
+      {(index) => <div key={index}>This is item {index} in the list</div>}
+    </Repeat>
+  );
+}
+```
+
+**Booleans, Null, and Undefined Are Ignored**
+
+- `false`, `null`, `undefined`, and `true` are all valid children.
+
+  - They will **not** render.
+
+- You can use these to conditionally render items.
+
+```js
+<div>
+  {showHeader && <Header />}
+  <Content />
+</div>
+```
+
+- In this example, the component will only render if `showHeader` evals to True.
+
+```js
+// Before work-around
+<div>
+  {props.messages.length &&
+    <MessageList messages={props.messages} />
+  }
+</div>
+// After work-around
+<div>
+  {props.messages.length > 0 &&
+    <MessageList messages={props.messages} />
+  }
+</div>
+```
+
+- Note that certain falsy values such as zero will still be rendered by React, you can work around this by ensuring situations like the above eval. into a boolean.
+
+- In the times you want booleans to be rendered out, simply **convert it into a string** first.
+
+```js
+<div>My JavaScript variable is {String(myVariable)}.</div>
+```
 
 ## **Reconciliation**
 
