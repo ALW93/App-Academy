@@ -243,3 +243,88 @@ const Profile = ({ match: { url, path, params }) => {
 ---
 
 ## **React Builds**
+
+- **`Build`** : Process of converting code into something that can actually execute or run on the target platform.
+  - In regards to React, the minimum a build should do is convert JSX to something that browsers can understand.
+
+**Reviewing common terminology**
+
+- **`Linting`** : Process of using a tool to analyze your code to catch common errors, bugs, inconsistencies etc...
+- **`Transpilation`** : Process of converting source code, like JS, from one version to another.
+- **`Minification`** : Process of removing all unnecessary characters in your code.
+- **`Bundling`** : Process of combining multiple code files into a single file.
+- **`Tree Shaking`** : Process of removing unused or dead code from your application before it's bundled.
+
+**Configuration or code?**
+
+- `Configuration` allows developers to create build tasks by declaring either JSON, XML, or YAML without explicitly writing every step in the process.
+- `Coding` or `Scripting` simply requires code.
+
+**Babel and webpack (yes, that's intentionally a lowercase 'w')**
+
+- **`Babel`** : Code Transpiler that allows you to use all of the latest features and syntax wihtout worrying about what browsers support what.
+
+- **`webpack`** : Allows developers to use JS modules w/o requiring users to use a browser that natively supports ES modules.
+
+- Create React App uses webpack and Babel under the hood to build applications.
+
+**The Create React App build process**
+
+- What happens when you run `npm start`:
+  1. .env variables are loaded.
+  2. list of browsers to support are checked.
+  3. config'd HTTP port checked for availability.
+  4. application compiler is configured and created.
+  5. `webpack-dev-starter` is started
+  6. `webpack-dev-starter` compiles app.
+  7. `index.html` is loaded into browser
+  8. file watcher is started to watch for changes.
+
+**Ejecting**
+
+- There is a script in Create React App called `eject` that allows you to 'eject' your application and expose all the hidden stuff.
+
+**Preparing to deploy a React application for production**
+
+- **Defining Env Variables**
+
+```
+REACT_APP_FOO: some value
+REACT_APP_BAR: another value
+```
+
+```js
+console.log(process.env.REACT_APP_FOO);
+```
+
+```html
+Can be referenced in your index.html like so: <title>%REACT_APP_BAR%</title>
+```
+
+**Configuring the supported browsers**
+
+```js
+{
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+```
+
+- If you specify older browsers it will affect how your code get's transpiled.
+
+**Creating a production build**
+
+- Run `npm run build` to create a production build.
+  - Bundles React in production mode and optimizes the build for the best performance.
+
+---
