@@ -187,3 +187,59 @@ const redirect = () => this.props.history.replace("/some/other/url");
 ---
 
 ## **Nested Routes**
+
+**Why nested routes?**
+
+- Create routes that tunnel into main components vs getting rendered on the main page as it's own thing.
+
+**What are nested routes?**
+
+```js
+const Profile = (props) => {
+  // Custom call to database to fetch a user by a user ID.
+  const user = fetchUser(props.match.params.userId);
+  const { name, id } = user;
+
+  return (
+    <div>
+      <h1>Welcome to the profile of {name}!</h1>
+
+      <Link to={`/users/${id}/posts`}>{name}'s Posts</Link>
+      <Link to={`/users/${id}/photos`}>{name}'s Photos</Link>
+
+      <Route path="/users/:userId/posts" component={UserPosts} />
+      <Route path="/users/:userId/photos" component={UserPhotos} />
+    </div>
+  );
+};
+```
+
+**Alt. version using `props.match`**
+
+```js
+// Destructure `match` prop
+const Profile = ({ match: { url, path, params }) => {
+
+  // Custom call to database to fetch a user by a user ID.
+  const user = fetchUser(params.userId);
+  const { name, id } = user;
+
+  return (
+    <div>
+      <h1>Welcome to the profile of {name}!</h1>
+
+      <Link to={`${url}/posts`}>{name}'s Posts</Link>
+      <Link to={`${url}/photos`}>{name}'s Photos</Link>
+
+      <Route path={`${path}/posts`} component={UserPosts} />
+      <Route path={`${path}/photos`} component={UserPhotos} />
+    </div>}
+  );
+};
+```
+
+- As you can see above, our end URL isn't even defined until we apply those flexible values in.
+
+---
+
+## **React Builds**
