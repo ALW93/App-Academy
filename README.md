@@ -16,7 +16,9 @@
 
 ## **Thursday** (React Router and Navigation)
 
-[Notes]
+[Notes](10.12-10.16/ReactRouter-Thursday.md)
+
+[Documentation Notes]
 
 ## **Friday** (Context)
 
