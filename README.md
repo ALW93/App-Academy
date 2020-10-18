@@ -22,7 +22,7 @@
 
 ## **Friday** (Context)
 
-[Notes]
+[Notes](10.12-10.16/Context-Friday.md)
 
 ## **Extra**
 
