@@ -111,3 +111,79 @@ const Root = () => {
 ---
 
 ## **Navigation**
+
+**React Router Navigation**
+
+- `Link`, `NavLink`, `Redirect`, `history` props of React Router are used to help your user navigate routes.
+
+**Adding links for navigation**
+
+- Issues on-click navigation event to a route defined in app.
+- Usage renders an anchor tag with a correctly set `href` attribute.
+
+```js
+import { BrowserRouter, Route, Link } from "react-router-dom";
+```
+
+- `Link` takes two properties: `to` and `onClick`.
+
+  - `to` : route location that points to an absolute path.
+  - `onClick` : clickHandler.
+
+- `NavLink` works just like `Link` but has a bit of extra functionality.
+  - Adds extra styling, when the path it links to matches the current path.
+  - As it's name suggests, it is used to Nav Bars.
+  - Takes three props:
+    - `activeClassName` : allows you to set a CSS class name for styling. (default set to 'active')
+    - `activeStyle` : style object that is applied inline when it's `to` prop. matches the current URL.
+    - `exact` prop is a boolean that defaults to false; you can set it to true to apply requirement of an exact URL match.
+      - exact can also be used as a flag instead of a reg. property value.
+      - benefit of adding this is so that you don't trigger other matches.
+
+**Switching between routes**
+
+- **`<Switch>`** : Component allows you to only render one route even if several match the current URL.
+
+  - You may nest as many routes as you wish but only the first match of the current URL will be rendered.
+
+- Very useful if we want a default component to render if none of our routes match.
+
+```js
+<Switch>
+  <Route path="some/url" component={SomeComponent} />
+  <Route path="some/other/url" component={OtherComponent} />
+  <Route component={DefaultComponent} />
+</Switch>
+```
+
+- `DefaultComponent` will only render if none of the other URLs match up.
+
+- **`<Redirect>`** : Helps redirect users.
+  - Only takes a single prop: `to`.
+
+```js
+<Route
+  exact
+  path="/"
+  render={() => (this.props.currentUser ? <Home /> : <Redirect to="/login" />)}
+/>
+```
+
+**History**
+
+- `History` allows you to update the URL programmatically.
+- Contains two useful methods:
+  - `push` : Adds a new URL to the end of the history stack.
+  - `replace` : Replaces the current URL on the history stack, so the back button won't take you to it.
+
+```js
+// Pushing a new URL (and adding to the end of history stack):
+const handleClick = () => this.props.history.push("/some/url");
+
+// Replacing the current URL (won't be tracked in history stack):
+const redirect = () => this.props.history.replace("/some/other/url");
+```
+
+---
+
+## **Nested Routes**
