@@ -98,3 +98,34 @@
   - Most commonly used to make async API requests.
 
 ---
+
+## **Flux and Redux**
+
+**What is Flux?**
+
+- Front-end application architecutre.
+- A pattern in which to structure an application.
+- Unidirectional Data Flow - offers more predictability.
+  ![flux](https://s3.amazonaws.com/lecture-assets/redux-flux.png)
+
+- `Actions` : Begins the data flow of data, simple object that contains a type; type indicates the type of change to be performed.
+
+- `Dispatcher` : Mechanism for distributing actions to the store.
+
+- `Store` : The entire state of the application, responsible for updating the state of your app.
+
+- `View` : Unit of code that's responsible for rendering the user interface. Used to re-render the application when actions and changes occur.
+
+![graph](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/fullstack/react/assets/flux-loop.png)
+
+**Redux**
+
+![rdx](https://assets.aaonline.io/fullstack/react/assets/redux.gif)
+
+- Library that facilitates the implementation of Flux.
+- Redux Three Principles
+  - `Single Source of Truth`
+  - `State is Read-Only`
+  - `Only Pure Functions Change State`
+
+---
