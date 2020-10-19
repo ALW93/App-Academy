@@ -1,32 +1,24 @@
 # **Directory**
 
-## **Monday** (React Overview & ES6 Review)
+## **Monday** (Redux Intro)
 
-[Notes](10.12-10.16/ReactConcept-Monday.md)
+[Notes](10.19-10.23/Monday-ReduxIntro.md)
 
 ## **Tuesday** (Introduction to JSX)
 
-[Notes](10.12-10.16/ReactIntroComponents-Tuesday.md)
+[Notes]
 
 ## **Wednesday** (React State & Class Components)
 
-[Notes](10.12-10.16/ReactState-Wednesday.md)
-
-[Documentation Notes](10.12-10.16/ReactDoc.md)
+[Notes]
 
 ## **Thursday** (React Router and Navigation)
 
-[Notes](10.12-10.16/ReactDoc2.md)
-
-[Documentation Notes](10.12-10.16/ReactRouter-Thursday.md)
+[Notes]
 
 ## **Friday** (Context)
 
-[Notes](10.12-10.16/Context-Friday.md)
-
-## **Extra**
-
-[Random Notes](10.12-10.16/MiscNotes.md)
+[Notes]
 
 ## **Previous Weeks**
 
@@ -52,6 +44,8 @@
 
 ---
 
-## Week 11 - Week 13
+## Week 11 - Week 13 MIA
 
 ---
+
+![Week Fourteen Folder]
