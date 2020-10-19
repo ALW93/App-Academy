@@ -236,3 +236,83 @@ unsubscribeDisplay();
 // when the store state is updated.
 store.dispatch(addOrange); // no output
 ```
+
+## **Reducers**
+
+- Reducer function receives the current `state` and `action`, updates the state appropriately based on the `action.type` and returns the following state.
+
+- You can bundles different action types and ensuing logic by using a switch/case statement.
+
+```js
+const fruitReducer = (state = [], action) => {
+  switch (action.type) {
+    case "ADD_FRUIT":
+      return [...state, action.fruit];
+    case "ADD_FRUITS":
+      return [...state, ...action.fruits];
+    case "SELL_FRUIT":
+      const index = state.indexOf(action.fruit);
+      if (index !== -1) {
+        // remove first instance of action.fruit
+        return [...state.slice(0, index), ...state.slice(index + 1)];
+      }
+      return state; // if action.fruit is not in state, return previous state
+    case "SELL_OUT":
+      return [];
+    default:
+      return state;
+  }
+};
+```
+
+**Reviewing how Array#slice works**
+
+```js
+const fruits = ["apple", "apple", "orange", "banana", "watermelon"];
+
+// The index of the 'orange' element is 2.
+const index = fruits.indexOf("orange");
+
+// `...fruits.slice(0, index)` returns the array ['apple', 'apple']
+// `...fruits.slice(index + 1)` returns the array ['banana', 'watermelon']
+// The spread syntax combines the two array slices into the array
+// ['apple', 'apple', 'banana', 'watermelon']
+const newFruits = [...fruits.slice(0, index), ...fruits.slice(index + 1)];
+```
+
+- Approach that can be used to remove an element without mutating the original array.
+
+**Avoiding state mutations**
+
+- **Your reducer must always return a new object if the state changes.**
+
+**GOOD**
+
+```js
+const goodReducer = (state = { count: 0 }, action) => {
+  switch (action.type) {
+    case "INCREMENT_COUNTER":
+      const nextState = Object.assign({}, state);
+      nextState.count++;
+      return nextState;
+    default:
+      return state;
+  }
+};
+```
+
+**BAD**
+
+```js
+const badReducer = (state = { count: 0 }, action) => {
+  switch (action.type) {
+    case "INCREMENT_COUNTER":
+      state.count++;
+      return state;
+    default:
+      return state;
+  }
+};
+```
+
+---
