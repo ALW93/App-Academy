@@ -387,3 +387,28 @@ const sellOut = () => ({
 ---
 
 ## **Debugging Arrow Functions**
+
+- It is important to learn how to use debugger statements with arrow functions to effectively debug Redux cycle.
+
+**Understanding the limitations of implicit return values**
+
+```js
+const addFruit = (fruit) => {
+  return {
+    type: "ADD_FRUIT",
+    fruit,
+  };
+};
+
+const addFruit = (fruit) => {
+  debugger;
+  return {
+    type: "ADD_FRUIT",
+    fruit,
+  };
+};
+```
+
+- You must use explicit return statement arrow function to use a debugger.
+
+---
