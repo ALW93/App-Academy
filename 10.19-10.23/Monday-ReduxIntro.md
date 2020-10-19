@@ -316,3 +316,74 @@ const badReducer = (state = { count: 0 }, action) => {
 ```
 
 ---
+
+## **Actions**
+
+- Actions are the only way to trigger changes to the store's state.
+
+**Using action creators**
+
+```js
+const addOrange = {
+  type: "ADD_FRUIT",
+  fruit: "orange",
+};
+
+store.dispatch(addOrange);
+console.log(store.getState()); // [ 'orange' ]
+```
+
+- fruit is the `payload key` and orange is the `state data`
+
+- **`Action Creators`** : Functions created from extrapolating the creation of an action object.
+
+```js
+const addFruit = (fruit) => ({
+  type: "ADD_FRUIT",
+  fruit,
+});
+```
+
+- Use parenthesis for implicit return value.
+- We can now add whatever fruit we'd like.
+
+```js
+store.dispatch(addFruit("apple"));
+store.dispatch(addFruit("strawberry"));
+store.dispatch(addFruit("lychee"));
+console.log(store.getState()); // [ 'orange', 'apple', 'strawberry', 'lychee' ]
+```
+
+**Preventing typos in action type string literals**
+
+```js
+const ADD_FRUIT = "ADD_FRUIT";
+const ADD_FRUITS = "ADD_FRUITS";
+const SELL_FRUIT = "SELL_FRUIT";
+const SELL_OUT = "SELL_OUT";
+
+const addFruit = (fruit) => ({
+  type: ADD_FRUIT,
+  fruit,
+});
+
+const addFruits = (fruits) => ({
+  type: ADD_FRUITS,
+  fruits,
+});
+
+const sellFruit = (fruit) => ({
+  type: SELL_FRUIT,
+  fruit,
+});
+
+const sellOut = () => ({
+  type: SELL_OUT,
+});
+```
+
+- Using constant variables helps reduce simple typos in a reducer's case clauses.
+
+---
+
+## **Debugging Arrow Functions**
