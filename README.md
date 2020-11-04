@@ -1,22 +1,18 @@
 # **Directory**
 
-## **Monday** (Redux Intro)
+## **Tuesday** (Python Intro)
 
-[Notes](10.19-10.23/Monday-ReduxIntro.md)
+[Notes](11.2-11.6/Tue-PythonBasics.md)
 
-## **Tuesday** (Introduction to JSX)
-
-[Notes]
-
-## **Wednesday** (React State & Class Components)
+## **Wednesday**
 
 [Notes]
 
-## **Thursday** (React Router and Navigation)
+## **Thursday**
 
 [Notes]
 
-## **Friday** (Context)
+## **Friday**
 
 [Notes]
 
@@ -41,11 +37,3 @@
 [Week Nine Folder](https://github.com/ALW93/App-Academy/tree/master/9.8-9.11)
 
 [Week Ten Folder](https://github.com/ALW93/App-Academy/tree/master/9.14-9.18)
-
----
-
-## Week 11 - Week 13 MIA
-
----
-
-![Week Fourteen Folder]
