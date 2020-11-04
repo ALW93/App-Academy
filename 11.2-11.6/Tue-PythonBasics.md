@@ -175,3 +175,366 @@ print('Your name is {0} {1}'.format(first_name, last_name))  # => Your name is B
   ![pic](https://i.gyazo.com/af6244c64c06827fb19ac9cd86a75d17.png)
 
 ---
+
+## **Variables and Expressions**
+
+- **Duck-Typing** : Programming Style which avoids checking an object's type to figure out what it can do.
+
+  - Duck Typing is the fundamental approach of Python.
+
+- Assignment of a value automatically declares.
+
+```py
+a = 7
+b = 'Marbles'
+print(a)         # => 7
+print(b)         # => Marbles
+```
+
+- You can chain variable assignments to give multiple var names the same value.
+  - Use with caution as this is highly unreadable
+
+```py
+count = max = min = 0
+print(count)           # => 0
+print(max)             # => 0
+print(min)             # => 0
+```
+
+- The value and type of a variable can be re-assigned at any time.
+
+```js
+a = 17
+print(a)         # => 17
+a = 'seventeen'
+print(a)         # => seventeen
+```
+
+- `NaN` does not exist in Python, but you can 'create' it like so:
+  `print(float("nan"))`
+
+- Python replaces `null` with `none`.
+  - `none` is an object and can be directly assigned to a variable.
+  - Using none is a convenient way to check to see why an action may not be operating correctly in your program.
+
+---
+
+## **Boolean Data Type**
+
+- One of the biggest benefits of Python is that it reads more like English than JS does.
+  ![pic](https://i.gyazo.com/3d9fb881df9245a42024aae4ee38a1c5.png)
+
+```py
+# Logical AND
+print(True and True)    # => True
+print(True and False)   # => False
+print(False and False)  # => False
+
+# Logical OR
+print(True or True)     # => True
+print(True or False)    # => True
+print(False or False)   # => False
+
+# Logical NOT
+print(not True)             # => False
+print(not False and True)   # => True
+print(not True or False)    # => False
+```
+
+- By default, Python considers an object to be true UNLESS it is one of the following:
+
+  - Constant `None` or `False`
+  - Zero of any numeric type.
+  - Empty Sequence or Collection.
+
+- `True` and `False` must be capitalized
+
+---
+
+## **Comparison Operators**
+
+- Python uses all the same equality operators as JS.
+
+- In Python, equality operators are processed from left to right.
+
+- Logical operators are processed in this order:
+
+  1. **NOT**
+  2. **AND**
+  3. **OR**
+
+- Just like in JS, you can use `parentheses` to change the inherent order of operations.
+
+- **Short Circuit** : Stopping a program when a `true` or `false` has been reached.
+  ![pic](https://i.gyazo.com/ccbe5511757813a61e3833d13c43fd8b.png)
+
+---
+
+## **Identity vs Equality**
+
+```py
+print (2 == '2')    # => False
+print (2 is '2')    # => False
+
+print ("2" == '2')    # => True
+print ("2" is '2')    # => True
+
+# There is a distinction between the number types.
+print (2 == 2.0)    # => True
+print (2 is 2.0)    # => False
+```
+
+- In the Python community it is better to use `is` and `is not` over `==` or `!=`
+
+---
+
+## **If Statements**
+
+```py
+if name == 'Monica':
+    print('Hi, Monica.')
+```
+
+```py
+if name == 'Monica':
+    print('Hi, Monica.')
+else:
+    print('Hello, stranger.')
+```
+
+```py
+if name == 'Monica':
+    print('Hi, Monica.')
+elif age < 12:
+    print('You are not Monica, kiddo.')
+elif age > 2000:
+   print('Unlike you, Monica is not an undead, immortal vampire.')
+elif age > 100:
+   print('You are not Monica, grannie.')
+```
+
+- Remember the order of `elif` statements matter.
+
+---
+
+## **While Statements**
+
+```py
+spam = 0
+while spam < 5:
+  print('Hello, world.')
+  spam = spam + 1
+```
+
+- `Break` statement also exists in Python.
+
+```py
+spam = 0
+while True:
+  print('Hello, world.')
+  spam = spam + 1
+  if spam >= 5:
+    break
+```
+
+- As are `continue` statements
+
+```py
+spam = 0
+while True:
+  print('Hello, world.')
+  spam = spam + 1
+  if spam < 5:
+    continue
+  break
+```
+
+---
+
+## **Try/Except Statements**
+
+- Python equivalent to `try/catch`
+
+```py
+a = 321
+try:
+    print(len(a))
+except:
+    print('Silently handle error here')
+
+    # Optionally include a correction to the issue
+    a = str(a)
+    print(len(a)
+```
+
+```py
+a = '321'
+try:
+    print(len(a))
+except:
+    print('Silently handle error here')
+
+    # Optionally include a correction to the issue
+    a = str(a)
+    print(len(a))
+```
+
+- You can name an error to give the output more specificity.
+
+```py
+a = 100
+b = 0
+try:
+    c = a / b
+except ZeroDivisionError:
+    c = None
+print(c)
+```
+
+- You can also use the `pass` commmand to by pass a certain error.
+
+```py
+a = 100
+b = 0
+try:
+    print(a / b)
+except ZeroDivisionError:
+    pass
+```
+
+- The `pass` method won't allow you to bypass every single error so you can chain an exception series like so:
+
+```py
+a = 100
+# b = "5"
+try:
+    print(a / b)
+except ZeroDivisionError:
+    pass
+except (TypeError, NameError):
+    print("ERROR!")
+```
+
+- You can use an `else` statement to end a chain of `except` statements.
+
+```py
+# tuple of file names
+files = ('one.txt', 'two.txt', 'three.txt')
+
+# simple loop
+for filename in files:
+    try:
+        # open the file in read mode
+        f = open(filename, 'r')
+    except OSError:
+        # handle the case where file does not exist or permission is denied
+        print('cannot open file', filename)
+    else:
+        # do stuff with the file object (f)
+        print(filename, 'opened successfully')
+        print('found', len(f.readlines()), 'lines')
+        f.close()
+```
+
+- `finally` is used at the end to clean up all actions under any circumstance.
+
+```py
+def divide(x, y):
+    try:
+        result = x / y
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+    else:
+        print("Result is", result)
+    finally:
+        print("Finally...")
+```
+
+- Using duck typing to check to see if some value is able to use a certain method.
+
+```py
+# Try a number - nothing will print out
+a = 321
+if hasattr(a, '__len__'):
+    print(len(a))
+
+# Try a string - the length will print out (4 in this case)
+b = "5555"
+if hasattr(b, '__len__'):
+    print(len(b))
+```
+
+---
+
+## **Pass**
+
+- Pass Keyword is required to write the JS equivalent of :
+
+```js
+if (true) {
+}
+
+while (true) {}
+```
+
+```py
+if True:
+  pass
+
+while True:
+  pass
+```
+
+---
+
+## **Functions**
+
+- **Function** definition includes:
+  - The `def` keyword
+  - The name of the function
+  - A list of parameters enclosed in parentheses.
+  - A colon at the end of the line.
+  - One tab indentation for the code to run.
+
+```py
+def printCopyright():
+    print("Copyright 2020. Me, myself and I. All rights reserved.")
+```
+
+- You can use default parameters just like in JS
+
+```py
+def greeting(name, saying="Hello"):
+    print(saying, name)
+
+greeting("Monica")
+# Hello Monica
+
+greeting("Barry", "Hey")
+# Hey Barry
+```
+
+- Keep in mind, default parameters must always come after regular parameters.
+
+```py
+# THIS IS BAD CODE AND WILL NOT RUN
+def increment(delta=1, value):
+    return delta + value
+```
+
+- You can specify arguments by name without destructuring in Python.
+
+```py
+def greeting(name, saying="Hello"):
+    print(saying, name)
+
+# name has no default value, so just provide the value
+# saying has a default value, so use a keyword argument
+greeting("Monica", saying="Hi")
+```
+
+- The `lambda` keyword is used to create anonymous functions and are supposed to be `one-liners`.
+
+`toUpper = lambda s: s.upper()`
+
+---
