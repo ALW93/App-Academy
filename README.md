@@ -6,7 +6,7 @@
 
 ## **Wednesday**
 
-[Notes]
+[Notes](11.2-11.6/Wed-PythonBasics2.md)
 
 ## **Thursday**
 
