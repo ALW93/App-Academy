@@ -10,7 +10,7 @@
 
 ## **Thursday**
 
-[Notes]
+[Notes](11.2-11.6/Thurs-ListClass.md)
 
 ## **Friday**
 
